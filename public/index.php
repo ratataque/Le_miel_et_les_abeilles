@@ -7,56 +7,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Document</title>
 </head>
 
 <body>
-    <header class="nav">
-        <section>
-            <a href="" id="logo" target="_blank">HELLINE SUPERVISOR</a>
-
-            <label for="toggle-1" class="toggle-menu">
-                <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ul>
-            </label>
-            <input type="checkbox" id="toggle-1">
-
-            <nav>
-                <ul>
-                    <li><a href="/index.php?content=accueil"><i class="icon-home"></i>Acceuil</a></li>
-                    <li><a href="/index.php?content=login"><i class="icon-user"></i>Connexion</a></li>
-                    <!-- <li><a href="#portfolio"><i class="icon-thumbs-up-alt"></i>portfolio</a></li>
-                    <li><a href="#services"><i class="icon-gear"></i>services</a></li>
-                    <li><a href="#gallery"><i class="icon-picture"></i>gallery</a></li>
-                    <li><a href="#contact"><i class="icon-phone"></i>contact</a></li> -->
-                </ul>
-            </nav>
-        </section>
-    </header>
-
-    <section class="body">
-        <?php
-            if (isset($_GET["content"])) {
-                include $_GET["content"] . ".php";
-            } else {
-                include "accueil.php";
-            }
-        ?>
-    </section>
-
-    <footer>
-        <ul class="social">
-            <li><a href="" target="_blank"><i class="icon-twitter"></i></a></li>
-            <li><a href="" target="_blank"><i class="icon-facebook"></i></a></li>
-            <li><a href="" target="_blank"><i class="icon-linkedin"></i></a></li>
-            <li><a href="" target="_blank"><i class="icon-pinterest"></i></a></li>
-            <li><a href="" target="_blank"><i class="icon-instagram"></i></a></li>
-        </ul>
-    </footer>
+    <h1>Click the burger menu to see the magic.</h1>
+    <input type="checkbox" id="burger-toggle">
+    <label for="burger-toggle" class="burger-menu">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </label>
+    <div class="menu">
+        <div class="menu-inner">
+            <ul class="menu-nav">
+                <li class="menu-nav-item"><a class="menu-nav-link" href="#"><span>
+                            <div>Nos Apiculteurs</div>
+                        </span></a></li>
+                <li class="menu-nav-item"><a class="menu-nav-link" href="#"><span>
+                            <div>Nos Miels</div>
+                        </span></a></li>
+                <li class="menu-nav-item"><a class="menu-nav-link" href="#"><span>
+                            <div>Notre Projet</div>
+                        </span></a></li>
+                <li class="menu-nav-item"><a class="menu-nav-link" href="#"><span>
+                            <div>Connexion</div>
+                        </span></a></li>
+            </ul>
+            <div class="gallery">
+                <div class="title">
+                    <p>miel o max</p>
+                </div>
+                <div class="images">
+                    <a class="image-link" href="#">
+                        <div class="image" data-label="Star"><img src="https://i.loli.net/2019/11/23/cnKl1Ykd5rZCVwm.jpg" alt=""></div>
+                    </a>
+                    <a class="image-link" href="#">
+                        <div class="image" data-label="Sun"><img src="https://i.loli.net/2019/11/16/FLnzi5Kq4tkRZSm.jpg" alt=""></div>
+                    </a>
+                    <a class="image-link" href="#">
+                        <div class="image" data-label="Tree"><img src="https://i.loli.net/2019/10/18/uXF1Kx7lzELB6wf.jpg" alt=""></div>
+                    </a>
+                    <a class="image-link" href="#">
+                        <div class="image" data-label="Sky"><img src="https://i.loli.net/2019/10/18/buDT4YS6zUMfHst.jpg" alt=""></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
