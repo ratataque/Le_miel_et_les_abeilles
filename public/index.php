@@ -28,10 +28,10 @@
                 <li class="menu-nav-item"><a class="menu-nav-link" href="#"><span>
                             <div>Nos Miels</div>
                         </span></a></li>
-                <li class="menu-nav-item"><a class="menu-nav-link" href="#"><span>
+                <li class="menu-nav-item"><a class="menu-nav-link" href="./projet.php"><span>
                             <div>Notre Projet</div>
                         </span></a></li>
-                <li class="menu-nav-item"><a class="menu-nav-link" href="#"><span>
+                <li class="menu-nav-item"><a class="menu-nav-link" href="./login.php"><span>
                             <div>Connexion</div>
                         </span></a></li>
             </ul>
@@ -41,16 +41,16 @@
                 </div>
                 <div class="images">
                     <a class="image-link" href="#">
-                        <div class="image" data-label="Star"><img src="https://i.loli.net/2019/11/23/cnKl1Ykd5rZCVwm.jpg" alt=""></div>
+                        <div class="image" data-label="Appiculteur"><img src="./images/apiculteur.jpg" ></div>
                     </a>
                     <a class="image-link" href="#">
-                        <div class="image" data-label="Sun"><img src="https://i.loli.net/2019/11/16/FLnzi5Kq4tkRZSm.jpg" alt=""></div>
+                        <div class="image" data-label="Miel"><img src="./images/miel.jpg" ></div>
                     </a>
-                    <a class="image-link" href="#">
-                        <div class="image" data-label="Tree"><img src="https://i.loli.net/2019/10/18/uXF1Kx7lzELB6wf.jpg" alt=""></div>
+                    <a class="image-link" href="./projet.php">
+                        <div class="image" data-label="Projet"><img src="./images/projet.jpg" ></div>
                     </a>
-                    <a class="image-link" href="#">
-                        <div class="image" data-label="Sky"><img src="https://i.loli.net/2019/10/18/buDT4YS6zUMfHst.jpg" alt=""></div>
+                    <a class="image-link" href="./login.php">
+                        <div class="image" data-label="Connexion"><img src="./images/connexion.jpg" ></div>
                     </a>
                 </div>
             </div>
