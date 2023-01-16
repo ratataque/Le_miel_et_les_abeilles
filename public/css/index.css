@@ -13,6 +13,34 @@ p {
     margin: 0;
 }
 
+/* .cacher {
+    transform: translate(-50%, 102%) !important;
+    transition: 1.2s 0.1s cubic-bezier(0.35, 0, 0.07, 1);
+} */
+
+/* .show {
+    transform: translate(-50%, 0) !important;
+    transition: 1.2s 0.1s cubic-bezier(0.35, 0, 0.07, 1);
+} */
+
+.abso {
+    position: absolute;
+    transform: translateY(-113%);
+}
+
+#start {
+    position: relative;
+    z-index: 2;
+}
+
+#appiculteur {
+    z-index: 1;
+}
+
+#miel {
+    z-index: 1;
+}
+
 #burger-toggle {
     position: absolute;
     appearance: none;
@@ -24,31 +52,37 @@ p {
     visibility: visible;
 }
 
-#burger-toggle:checked~.menu .menu-nav-link span div,
-#burger-toggle:checked~.menu .title p {
+#burger-toggle:checked~.menu .menu-nav-link span div {
     transform: translateY(0);
     transition: 1.2s 0.1s cubic-bezier(0.35, 0, 0.07, 1);
 }
 
-#burger-toggle:checked~.menu img {
+#burger-toggle:checked~.menu .title .show {
+    transform: translateY(0);
+}
+
+#burger-toggle:checked~.menu .show {
     transform: translate(-50%, 0);
-    transition: 1.2s 0.1s cubic-bezier(0.35, 0, 0.07, 1);
 }
 
 #burger-toggle:checked~.menu .image-link:nth-child(1) img {
     transition-delay: 0.18s;
+    transition: 1.2s 0.18s cubic-bezier(0.35, 0, 0.07, 1);
 }
 
 #burger-toggle:checked~.menu .image-link:nth-child(2) img {
     transition-delay: 0.26s;
+    transition: 1.2s 0.26s cubic-bezier(0.35, 0, 0.07, 1);
 }
 
 #burger-toggle:checked~.menu .image-link:nth-child(3) img {
     transition-delay: 0.34s;
+    transition: 1.2s 0.34s cubic-bezier(0.35, 0, 0.07, 1);
 }
 
 #burger-toggle:checked~.menu .image-link:nth-child(4) img {
     transition-delay: 0.42s;
+    transition: 1.2s 0.42s cubic-bezier(0.35, 0, 0.07, 1);
 }
 
 #burger-toggle:checked~.burger-menu .line::after {
@@ -218,6 +252,7 @@ p {
     letter-spacing: 2px;
     text-transform: uppercase;
     transform: translateY(102%);
+    transition: 1.2s 0.1s cubic-bezier(0.35, 0, 0.07, 1);
 }
 
 .menu .images {
@@ -234,6 +269,7 @@ p {
 
 .menu .images .image-link {
     width: 15vw;
+    height: 26vh;
     margin: 0 12px;
     overflow: hidden;
 }
@@ -280,4 +316,5 @@ p {
     position: relative;
     left: 50%;
     transform: translate(-50%, 102%);
+    /* transition: 1.2s 0.1s cubic-bezier(0.35, 0, 0.07, 1); */
 }
