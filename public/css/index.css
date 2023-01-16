@@ -16,7 +16,12 @@ p {
 #login {
     position: absolute;
     z-index: -1;
-    visibility: hidden;
+    /* visibility: hidden; */
+}
+
+#projet {
+    position: absolute;
+    z-index: -1;
 }
 
 /* .cacher {

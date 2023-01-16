@@ -37,16 +37,19 @@ function transi_rond(event, element) {
 
     console.log(x, y, element.id);
 
-    if (element.id === "btn_login" ) {
+    if ($("#"+element.id).hasClass("btn_login")) {
         page_suivante = $("#login");
-        page_precedente = $("#accueil");
-    } else {
-        page_suivante = $("#accueil");
-        page_precedente = $("#login");
+        page_precedente = $(".focus");
+    } 
+    else {
+        page_suivante = $("#projet");
+        page_precedente = $(".focus");
     }
 
     // page_suivante.show();
-    // page_precedente.hide();
+    // page_precedente.hide();    
+    $(".focus").removeClass("focus");
+    $("#login").addClass("focus")
     
     page_suivante.css('z-index', parseInt($(page_precedente).css('z-index')) + 1);
     page_suivante.css('clip-path', 'circle(0% at '+ x +'px '+ y +'px)');
@@ -57,4 +60,14 @@ function transi_rond(event, element) {
             page_suivante.css('clip-path', 'circle(' + (anim.progress * 2) + '% at ' + x + 'px ' + y + 'px)');
         }
     });
+    
+    setTimeout(() => {
+        $(".show").removeClass("show");
+        
+        $(".menu #start .title p").addClass("show");
+        $(".menu #start .image-link a").show();
+        $(".menu #start .image img").addClass("show");       
+        
+        $("#burger-toggle").prop("checked", false);
+    }, 300);
 }

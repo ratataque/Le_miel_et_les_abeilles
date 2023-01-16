@@ -10,6 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="./js/script.js"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.1.0/anime.min.js"></script>
 
     <title>Document</title>
 </head>
@@ -31,10 +32,10 @@
                 <li class="menu-nav-item"><a class="menu-nav-link" href="#" onclick="switch_img('miel')"><span>
                             <div>Nos Miels</div>
                         </span></a></li>
-                <li class="menu-nav-item"><a class="menu-nav-link" href="./projet.php"><span>
+                <li class="menu-nav-item"><a class="menu-nav-link btn_projet" href="#" onclick="transi_rond(event, this)"><span>
                             <div>Notre Projet</div>
                         </span></a></li>
-                <li class="menu-nav-item"><a class="menu-nav-link" href="./login.php"><span>
+                <li class="menu-nav-item"><a class="menu-nav-link btn_login" href="#" onclick="transi_rond(event, this)"><span>
                             <div>Connexion</div>
                         </span></a></li>
             </ul>
@@ -54,12 +55,12 @@
                         </a>
                     </div>
                     <div class="image-link" >
-                        <a href="./projet.php">
+                        <a class="btn_projet" href="#" onclick="transi_rond(event, this)">
                             <div class="image" data-label="Projet"><img class="show" src="./images/projet.jpg"></div>
                         </a>
                     </div>
                     <div class="image-link" >
-                        <a href="./login.php">
+                        <a class="btn_login" href="#" onclick="transi_rond(event, this)">
                             <div class="image" data-label="Connexion"><img class="show" src="./images/connexion.jpg"></div>
                         </a>
                     </div>
@@ -113,8 +114,13 @@
             </div>
         </div>
     </div>
-    <div id="login">
-        <?php include("./login.php") ?>
+
+    <div id="login" style="height: 100vh; width: 100vw; background-color: white;">
+        <?php include("./login.php"); ?>
+    </div>
+
+    <div id="projet" style="height: 100vh; width: 100vw; background-color: yellow;">
+        <?php include("./projet.php"); ?>
     </div>
 </body>
 
