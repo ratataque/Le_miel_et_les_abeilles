@@ -21,8 +21,10 @@ function init() {
     $(".show").removeClass("show");
 
     if ($("#burger-toggle").is(":checked")) {
-        $("#accueil").css("z-index", -2);
         $(".focus").css("z-index", -1);
+        setTimeout(() => {
+            $("#accueil").css("z-index", -2);
+        }, 300);
     } else {
         $("#accueil").css("z-index", -1);
     }
