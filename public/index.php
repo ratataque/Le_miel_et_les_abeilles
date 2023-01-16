@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <h1>Click the burger menu to see the magic.</h1>
+    <!-- <h1>Click the burger menu to see the magic.</h1> -->
     <input type="checkbox" id="burger-toggle" onclick="init()">
     <label for="burger-toggle" class="burger-menu">
         <div class="line"></div>
@@ -112,6 +112,9 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div id="login">
+        <?php include("./login.php") ?>
     </div>
 </body>
 
