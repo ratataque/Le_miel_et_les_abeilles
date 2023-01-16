@@ -98,7 +98,7 @@
                         </a>
                     </div>
                     <div class="image-link" >
-                        <a href="#" style="display: none;">
+                        <a href="#" style="display: none;" onclick="miel_click()">
                             <div class="image" data-label="Miel"><img class="show" src="./images/miel.jpg"></div>
                         </a>
                     </div>

@@ -58,6 +58,10 @@ p {
     z-index: 1;
 }
 
+.tej {
+    transform: translateY(102%) !important;
+}
+
 #burger-toggle {
     position: absolute;
     appearance: none;
@@ -187,9 +191,9 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #1a1e23;
+    background: rgb(26, 30, 35, 0.8);
     opacity: 0;
-    overflow-x: hidden;
+    overflow-x:hidden;
     visibility: hidden;
     transition: 0.3s;
 }
