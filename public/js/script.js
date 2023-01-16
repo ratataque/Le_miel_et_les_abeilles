@@ -20,7 +20,12 @@ function switch_img(next_div) {
 function init() {
     $(".show").removeClass("show");
 
-    $(".focus").css("z-index", -1);
+    if ($("#burger-toggle").is(":checked")) {
+        $("#accueil").css("z-index", -2);
+        $(".focus").css("z-index", -1);
+    } else {
+        $("#accueil").css("z-index", -1);
+    }
     $("#start").css("z-index", parseInt($(".focus").css('z-index')) + 3);
 
     $(".focus").removeClass("focus");
@@ -35,21 +40,21 @@ function transi_rond(event, element) {
     var x = event.pageX;
     var y = event.pageY;
 
-    console.log(x, y, element.id);
-
-    if ($("#"+element.id).hasClass("btn_login")) {
+    if ($(element).hasClass("btn_login")) {
         page_suivante = $("#login");
         page_precedente = $(".focus");
+
+        $(".focus").removeClass("focus");
+        $("#login").addClass("focus")
     } 
     else {
         page_suivante = $("#projet");
         page_precedente = $(".focus");
+
+        $(".focus").removeClass("focus");
+        $("#projet").addClass("focus")
     }
 
-    // page_suivante.show();
-    // page_precedente.hide();    
-    $(".focus").removeClass("focus");
-    $("#login").addClass("focus")
     
     page_suivante.css('z-index', parseInt($(page_precedente).css('z-index')) + 1);
     page_suivante.css('clip-path', 'circle(0% at '+ x +'px '+ y +'px)');
@@ -69,5 +74,5 @@ function transi_rond(event, element) {
         $(".menu #start .image img").addClass("show");       
         
         $("#burger-toggle").prop("checked", false);
-    }, 300);
+    }, 400);
 }

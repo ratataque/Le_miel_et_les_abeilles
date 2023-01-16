@@ -122,6 +122,10 @@
     <div id="projet" style="height: 100vh; width: 100vw; background-color: yellow;">
         <?php include("./projet.php"); ?>
     </div>
+
+    <div id="accueil" style="height: 100vh; width: 100vw; background-color: white;">
+        <?php include("./accueil.php"); ?>
+    </div>
 </body>
 
 </html>
