@@ -11,6 +11,12 @@ form {
     border-radius: 10%;
     border: 1px solid #EBA937;
 }
+#div_formulaire {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 
 form h1 {
     /* color: #ffffff; */
