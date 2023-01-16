@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="css/login.css">    
 
 <form>
     <h1>Se connecter</h1>

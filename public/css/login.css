@@ -16,7 +16,7 @@ form h1 {
     /* color: #ffffff; */
     font-family: "Audiowide", sans-serif;
     background-image: linear-gradient(to right, #ffffff, #EBA937);
-    text-shadow: 3px 3px 3px #EBA937;
+    /* text-shadow: 3px 3px 3px #EBA937; */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-align: center;
