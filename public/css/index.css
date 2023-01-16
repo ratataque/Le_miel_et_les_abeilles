@@ -27,6 +27,7 @@ p {
 #accueil {
     position: absolute;
     z-index: -2;
+    overflow: hidden
 }
 
 /* .cacher {
@@ -135,8 +136,8 @@ p {
     left: 25%;
     width: 50%;
     height: 3px;
-    background: rgba(43, 61, 79, 0.3);
-    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 1000px;
     overflow: hidden;
     transition: 0.5s;
 }
@@ -333,4 +334,13 @@ p {
     left: 50%;
     transform: translate(-50%, 102%);
     /* transition: 1.2s 0.1s cubic-bezier(0.35, 0, 0.07, 1); */
+}
+
+
+.image_accueil img {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
 }
