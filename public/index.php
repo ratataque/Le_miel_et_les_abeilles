@@ -117,7 +117,7 @@
         </div>
     </div>
 
-    <div id="login" style="height: 100vh; width: 100vw; background-color: white;">
+    <div id="login" style="height: 100vh; width: 100vw; background-image: url('./images/background_miel.jpg'); background-size: cover;">
         <?php include("./login.php"); ?>
     </div>
 
