@@ -21,14 +21,17 @@ function init() {
     $(".show").removeClass("show");
 
     if ($("#burger-toggle").is(":checked")) {
-        $(".focus").css("z-index", -1);
+        // $(".focus").css("z-index", 0);
+        // $(".focus").css("z-index", parseInt($("start").css('z-index')) + 3);
         setTimeout(() => {
             $("#accueil").css("z-index", -2);
         }, 300);
     } else {
-        $("#accueil").css("z-index", -1);
+        $("#accueil").css("z-index", -2);
+        $("#projet").css("z-index", -2);
+        $("#login").css("z-index", -2);
     }
-    $("#start").css("z-index", parseInt($(".focus").css('z-index')) + 3);
+    $(".menu").css("z-index", parseInt($(".focus").css('z-index')) + 3);
 
     $(".focus").removeClass("focus");
     $("#start").addClass("focus");
@@ -44,15 +47,19 @@ function transi_rond(event, element) {
 
     if ($(element).hasClass("btn_login")) {
         page_suivante = $("#login");
-        page_precedente = $(".focus");
+        page_precedente = $(".menu");
 
+        $(".focus").css("z-index", -1);
+        $("#start").css("z-index", parseInt($(".focus").css('z-index')) + 3);
         $(".focus").removeClass("focus");
         $("#login").addClass("focus")
     }
     else {
         page_suivante = $("#projet");
-        page_precedente = $(".focus");
+        page_precedente = $(".menu");
 
+        $(".focus").css("z-index", -1);
+        $("#start").css("z-index", parseInt($(".focus").css('z-index')) + 3);
         $(".focus").removeClass("focus");
         $("#projet").addClass("focus")
     }

@@ -71,6 +71,7 @@ p {
 #burger-toggle:checked~.menu {
     opacity: 1;
     visibility: visible;
+    z-index: 2;
 }
 
 #burger-toggle:checked~.menu .menu-nav-link span div {
