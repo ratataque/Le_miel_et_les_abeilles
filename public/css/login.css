@@ -1,7 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Audiowide');
 
 #texte_rouge {
-    color: rgb(159, 2, 2);
+    color: rgb(176, 37, 37);
+}
+#texte_cacher {
+    color: #393f4d;
 }
 #texte_centrer{
     display: flex;
