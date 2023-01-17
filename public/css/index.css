@@ -37,10 +37,13 @@ p {
     overflow: hidden
 }
 
-/* .cacher {
-    transform: translate(-50%, 102%) !important;
-    transition: 1.2s 0.1s cubic-bezier(0.35, 0, 0.07, 1);
-} */
+.cacher {
+    transform: translateX(-70%) !important;
+}
+
+.cacher_bas {
+    transform: translateY(50vh) !important;
+}
 
 /* .show {
     transform: translate(-50%, 0) !important;
@@ -70,7 +73,7 @@ p {
 }
 
 .miel_slide {
-    transform: translate(-150%, -110%) !important;
+    /* transform: translate(-150%, -110%) !important; */
     opacity: 1 !important;
     visibility: visible !important;
     z-index: 100 !important;
@@ -84,7 +87,38 @@ p {
 
 .space_titre {
     position: relative;
+    top: 26vh;
+    left: 24vw;
+    width: 70vw;
+    overflow: hidden;
 }
+
+.titre_miel {
+    margin-left: 10vw;
+    font-size: xx-large;
+    font-weight: 900;
+    transition: 1.2s 0.1s cubic-bezier(0.35, 0, 0.07, 1);
+}
+
+.space_description {
+    position:  relative;
+    top: 50vh;
+    left: 19vw;
+    width: 72vw;
+    height: 45vh;
+    overflow: hidden;
+    /* background-color: #555;
+    border-radius: 30px; */
+}
+
+.description {
+    font-weight: 700;
+    transition: 1.2s 0.1s cubic-bezier(0.35, 0, 0.07, 1);
+}
+
+
+
+
 
 #burger-toggle {
     position: absolute;

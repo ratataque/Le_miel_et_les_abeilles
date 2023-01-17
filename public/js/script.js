@@ -88,7 +88,7 @@ function transi_rond(event, element) {
 
 function miel_click(element) {
     
-    let x = $(element).children().children().offset().left -100;
+    let x = $(element).children().children().offset().left - 30;
     let y = $(element).children().children().offset().top - 130;
     console.log(x, y);
 
@@ -109,7 +109,7 @@ function miel_click(element) {
         $(".menu").css("opacity", 1);
 
         var page_suivante = $("#template_miel");
-        var page_precedente = $(".focus");
+        var page_precedente = $(".menu");
 
         $(".focus").css("z-index", -1);
         $("#start").css("z-index", parseInt($(".focus").css('z-index')) + 3);
@@ -120,4 +120,9 @@ function miel_click(element) {
         page_suivante.css("opacity", 1);
 
     }, 1050);
+
+    setTimeout(() => {
+        $(".cacher").removeClass("cacher");
+        $(".cacher_bas").removeClass("cacher_bas");
+    }, 1500);
 }
