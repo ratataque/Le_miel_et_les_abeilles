@@ -27,11 +27,13 @@ function init() {
             $("#accueil").css("z-index", -2);
         }, 300);
     } else {
-        $("#accueil").css("z-index", -2);
-        $("#projet").css("z-index", -2);
-        $("#login").css("z-index", -2);
+        $(".focus").css("z-index", -1);
+        $("#start").css("z-index", 2);
+    } 
+
+    if (parseInt($(".focus").css('z-index')) > parseInt($(".menu").css('z-index'))) {
+        $(".menu").css("z-index", parseInt($(".focus").css('z-index')) + 3);
     }
-    $(".menu").css("z-index", parseInt($(".focus").css('z-index')) + 3);
 
     $(".focus").removeClass("focus");
     $("#start").addClass("focus");
@@ -92,6 +94,7 @@ function miel_click() {
     $(".menu .menu-nav-link span div").addClass("tej");
 
     setTimeout(() => {
+
         $(".tej").removeClass("tej");
     }, 1150);
 }
