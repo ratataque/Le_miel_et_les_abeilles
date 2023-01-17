@@ -2,7 +2,6 @@ function switch_img(next_div) {
     $(".show").removeClass("show");
 
     setTimeout(() => {
-        // $(".focus .image-link a").hide();
         $(".focus").css("z-index", -1);
         $("#" + next_div).css("z-index", parseInt($(".focus").css('z-index')) + 3);
 
@@ -21,8 +20,6 @@ function init() {
     $(".show").removeClass("show");
 
     if ($("#burger-toggle").is(":checked")) {
-        // $(".focus").css("z-index", 0);
-        // $(".focus").css("z-index", parseInt($("start").css('z-index')) + 3);
         setTimeout(() => {
             $("#accueil").css("z-index", -2);
         }, 300);
