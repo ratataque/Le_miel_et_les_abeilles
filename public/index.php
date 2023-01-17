@@ -1,3 +1,6 @@
+<?php 
+include_once("../db/table.php");
+session_start();?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,7 +19,6 @@
 
     <title>Le Miel et les abeilles</title>
 </head>
-
 <body>
     <!-- <h1>Click the burger menu to see the magic.</h1> -->
     <input type="checkbox" id="burger-toggle" onclick="init()">
