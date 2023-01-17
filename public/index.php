@@ -1,6 +1,8 @@
 <?php 
 include_once("../db/table.php");
-session_start();?>
+session_start(); 
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -119,7 +121,7 @@ session_start();?>
         </div>
     </div>
 
-    <div id="login" style="height: 100vh; width: 100vw; background-image: url('./images/background_miel.jpg'); background-size: cover;">
+    <div id="login" style="height: 100vh; width: 100vw; background-image: url('./images/background_miel.jpg'); background-size: cover; <?php if(isset($_POST['email'])) { echo "z-index: 1;";}; ?> ">
         <?php include("./login.php"); ?>
     </div>
 

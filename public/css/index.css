@@ -70,7 +70,7 @@ p {
 }
 
 .miel_slide {
-    /* transform: translate(-150%, -110%) !important; */
+    transform: translate(-150%, -110%) !important;
     opacity: 1 !important;
     visibility: visible !important;
     z-index: 100 !important;

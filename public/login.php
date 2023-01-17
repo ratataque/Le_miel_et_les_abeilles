@@ -16,8 +16,8 @@ if (isset($_POST["email"])) {
         array_push($utilisateur, $_SESSION["utilisateur"]);
     }else{
         ?>  
-        <div class="texte_centrer"> 
-            <h1 class = "texte_rouge"> 
+        <div id="texte_centrer"> 
+            <h1 id = "texte_rouge"> 
                 Email ou mot de passe incorrect <br> la requete précédente n'as pas abouti.
             </h1>
         </div>
