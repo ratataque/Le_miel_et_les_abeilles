@@ -7,8 +7,9 @@ $conn = connection_sql();
 $sql = "CREATE TABLE IF NOT EXISTS apiculteur(
     id_apiculteur SERIAL,
     nom_societe VARCHAR(50),
-    nom VARCHAR(50),
-    prenom VARCHAR(50),
+    nom_apiculteur VARCHAR(50),
+    prenom_apiculteur VARCHAR(50),
+    description_apiculteur VARCHAR(50),
     PRIMARY KEY(id_apiculteur)
 );
 ";
@@ -17,6 +18,7 @@ $sql .= "CREATE TABLE IF NOT EXISTS miel(
     id_miel SERIAL,
     nom_miel VARCHAR(50),
     origine_miel VARCHAR(50),
+    description_miel VARCHAR(50),
     prix_miel INT,
     id_apiculteur INT NOT NULL,
     PRIMARY KEY(id_miel),
@@ -45,6 +47,8 @@ $sql .= "CREATE TABLE IF NOT EXISTS gestion(
     id_gestion SERIAL,
     nom_gestion VARCHAR(50),
     prenom_gestion VARCHAR(50),
+    email_gestion VARCHAR(50),
+    password_gestion VARCHAR(50),
     poste_gestion VARCHAR(50),
     PRIMARY KEY(id_gestion)
 );
