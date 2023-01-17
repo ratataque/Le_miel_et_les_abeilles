@@ -14,7 +14,7 @@
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.1.0/anime.min.js"></script>
 
-    <title>Document</title>
+    <title>Le Miel et les abeilles</title>
 </head>
 
 <body>
@@ -93,22 +93,22 @@
                 </div>
                 <div class="images">
                     <div class="image-link" >
-                        <a href="#" style="display: none;">
+                        <a href="#" style="display: none;" onclick="miel_click(this)">
                             <div class="image" data-label="Miel"><img class="show" src="./images/miel.jpg"></div>
                         </a>
                     </div>
                     <div class="image-link" >
-                        <a href="#" style="display: none;" onclick="miel_click()">
+                        <a href="#" style="display: none;" onclick="miel_click(this)">
                             <div class="image" data-label="Miel"><img class="show" src="./images/miel.jpg"></div>
                         </a>
                     </div>
                     <div class="image-link" >
-                        <a href="#" style="display: none;">
+                        <a href="#" style="display: none;" onclick="miel_click(this)">
                             <div class="image" data-label="Miel"><img class="show" src="./images/miel.jpg"></div>
                         </a>
                     </div>
                     <div class="image-link" >
-                        <a href="#" style="display: none;">
+                        <a href="#" style="display: none;" onclick="miel_click(this)">
                             <div class="image" data-label="Miel"><img class="show" src="./images/miel.jpg"></div>
                         </a>
                     </div>
@@ -123,6 +123,10 @@
 
     <div id="projet" style="height: 100vh; width: 100vw; background-color: yellow;">
         <?php include("./projet.php"); ?>
+    </div>
+
+    <div id="template_miel" style="height: 100vh; width: 100vw; background-color: white;">
+        <?php include("./template_miel.php"); ?>
     </div>
 
     <div id="accueil" style="height: 100vh; width: 100vw; background-color: white;">
