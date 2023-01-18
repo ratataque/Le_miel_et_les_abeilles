@@ -2,6 +2,30 @@
 include_once("../db/table.php");
 session_start(); 
 
+if (isset($GET["do"]) && $GET["do"] == "deconnexion") {
+    unset($_SESSION["utilisateur"]);
+}
+
+if (isset($_POST["email"])) {
+    $conn = connection_sql();
+    $sql = "SELECT * FROM gestion WHERE email_gestion = '" . $_POST['email'] . "' and password_gestion = '" . $_POST['password'] . "';";
+    $verification = pg_fetch_assoc(pg_query($conn, $sql));
+
+    if ($verification) {
+        $utilisateur = array(
+            "email" => $verification["email_gestion"],
+            "poste" => $verification["poste_gestion"]
+        );
+        $_SESSION["utilisateur"] = $utilisateur;
+        $login_valide = true;
+
+        header('Location: /gestion/administration.php');
+        exit;
+
+    } else {
+        $login_valide = false;
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -7,22 +7,7 @@ echo "</pre>";
 //unset($_SESSION['faux']);
 //unset($_SESSION['utilisateur']);
 //unset($_SESSION);
-if (isset($_POST["email"])) {
-    $conn = connection_sql();
-    $sql = "SELECT * FROM gestion WHERE email_gestion = '" . $_POST['email'] . "' and password_gestion = '" . $_POST['password'] . "';";
-    $verification = pg_fetch_assoc(pg_query($conn, $sql));
 
-    if ($verification) {
-        $utilisateur = array(
-            "email" => $verification["email_gestion"],
-            "poste" => $verification["poste_gestion"]
-        );
-        $_SESSION["utilisateur"] = $utilisateur;
-        $login_valide = true;
-    } else {
-        $login_valide = false;
-    }
-}
 
 ?>
 

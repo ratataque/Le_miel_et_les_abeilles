@@ -1,8 +1,12 @@
 <?php
-
+session_start();
 // include_once '../../db/connection_sql.php';
 // include_once '../../db/table.php';
 
+if (!isset($_SESSION["utilisateur"])) {
+    header("HTTP/1.1 401 Unauthorized");
+    exit;
+}
 ?>
 
 
@@ -36,12 +40,9 @@
             </div>
             <div id="mainListDiv" class="main_list">
                 <ul class="navlinks clients">
-                    <li><a class="titre" id="liste" href="/formulaire.php?content=liste">Liste</a></li>
-                    <li><a class="titre" id="clients" href="/formulaire.php?content=clients">Clients</a></li>
-                    <li><a class="titre" id="garage" href="/formulaire.php?content=garage">Garage</a></li>
-                    <li><a class="titre" id="societeExperts" href="/formulaire.php?content=societeExperts">Société expert</a></li>
-                    <li><a class="titre" id="expert" href="/formulaire.php?content=expert">Expert</a></li>
-                    <li><a class="titre" id="location" href="/formulaire.php?content=location">Location</a></li>
+                    <li><a class="titre" id="classe" href="/gestion/administration.php?content=class">Classe</a></li>
+                    <li><a class="titre" id="facture" href="/gestion/administration.php?content=facture">Facture</a></li>
+                    <li><a class="titre" id="ajout_apiculteur" href="/gestion/administration.php?content=ajout_apiculteur">Ajout Apiculteur</a></li>
                     <li><a class="titre" id="ajout_miel" href="/gestion/administration.php?content=ajout_miel">Ajout Miel</a></li>
                     <li><a class="titre" id="deconnexion" href="/index.php?do=deconnexion">Deconnexion</a></li>
                 </ul>
