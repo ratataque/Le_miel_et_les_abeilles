@@ -42,7 +42,7 @@
                     <li><a class="titre" id="societeExperts" href="/formulaire.php?content=societeExperts">Société expert</a></li>
                     <li><a class="titre" id="expert" href="/formulaire.php?content=expert">Expert</a></li>
                     <li><a class="titre" id="location" href="/formulaire.php?content=location">Location</a></li>
-                    <li><a class="titre" id="ajout_miel" href="/administration.php?content=ajout_miel">Rendez-Vous</a></li>
+                    <li><a class="titre" id="ajout_miel" href="/gestion/administration.php?content=ajout_miel">Ajout Miel</a></li>
                     <li><a class="titre" id="deconnexion" href="/index.php?do=deconnexion">Deconnexion</a></li>
                 </ul>
             </div>
