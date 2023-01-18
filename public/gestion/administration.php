@@ -23,8 +23,8 @@
     <script src="../bootstrap/5.1.2/js/bootstrap.bundle.min.js"></script>
 
     <!-- Jquery needed -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="../js/admin_scripts.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+    <script src="../js/admin_script.js"></script>
 </head>
 
 <body>
@@ -42,8 +42,8 @@
                     <li><a class="titre" id="societeExperts" href="/formulaire.php?content=societeExperts">Société expert</a></li>
                     <li><a class="titre" id="expert" href="/formulaire.php?content=expert">Expert</a></li>
                     <li><a class="titre" id="location" href="/formulaire.php?content=location">Location</a></li>
-                    <li><a class="titre" id="rendezVous" href="/formulaire.php?content=rendezVous">Rendez-Vous</a></li>
-                    <li><a class="titre" id="vehicule" href="/formulaire.php?content=vehicule">vehicule</a></li>
+                    <li><a class="titre" id="ajout_miel" href="/administration.php?content=ajout_miel">Rendez-Vous</a></li>
+                    <li><a class="titre" id="deconnexion" href="/index.php?do=deconnexion">Deconnexion</a></li>
                 </ul>
             </div>
             <span class="navTrigger">

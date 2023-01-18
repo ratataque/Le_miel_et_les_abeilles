@@ -1,5 +1,7 @@
 $(document).ready(function () {
+    console.log("test");
     $('.navTrigger').on('click', function () {
+        console.log("caca");
         $(this).toggleClass('active');
         console.log("Clicked menu");
         $("#mainListDiv").toggleClass("show_list");
