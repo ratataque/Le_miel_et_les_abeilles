@@ -2,7 +2,7 @@
 include_once("../db/table.php");
 session_start(); 
 
-if (isset($GET["do"]) && $GET["do"] == "deconnexion") {
+if (isset($_GET["do"]) && $_GET["do"] == "deconnexion") {
     unset($_SESSION["utilisateur"]);
 }
 
@@ -47,7 +47,7 @@ if (isset($_POST["email"])) {
 </head>
 <body>
     <!-- <h1>Click the burger menu to see the magic.</h1> -->
-    <input type="checkbox" id="burger-toggle" onclick="init()">
+    <input type="checkbox" id="burger-toggle" onclick="opa();init();">
     <label for="burger-toggle" class="burger-menu">
         <div class="line"></div>
         <div class="line"></div>

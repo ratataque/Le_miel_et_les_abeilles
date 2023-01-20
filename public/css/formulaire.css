@@ -37,7 +37,7 @@ body {
 }
 
 .focus {
-    color: #00E676 !important;
+    color: #f2aa48 !important;
 }
 
 .champ {
@@ -70,7 +70,7 @@ body {
 }
 
 .clients {
-    color: #00E676;
+    color: #f2aa48;
 }
 
 .form-control {
@@ -148,7 +148,7 @@ body {
     height: 100vh;
     background-image: url(https://images.unsplash.com/photo-1498550744921-75f79806b8a7?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=b0f6908fa5e81286213c7211276e6b3d&auto=format&fit=crop&w=1500&q=80);
     background-position: center top;
-	background-size:cover;
+    background-size:cover;
 }
 
 .navTrigger {
@@ -415,19 +415,19 @@ body {
 
 
 .myH2 {
-	text-align:center;
-	font-size: 4rem;
+    text-align:center;
+    font-size: 4rem;
 }
 .myP {
-	text-align: justify;
-	padding-left:15%;
-	padding-right:15%;
-	font-size: 20px;
+    text-align: justify;
+    padding-left:15%;
+    padding-right:15%;
+    font-size: 20px;
 }
 @media all and (max-width:700px){
-	.myP {
-		padding:2%;
-	}
+    .myP {
+        padding:2%;
+    }
 }
 
 

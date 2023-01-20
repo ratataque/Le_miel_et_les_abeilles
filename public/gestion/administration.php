@@ -36,7 +36,7 @@ if (!isset($_SESSION["utilisateur"])) {
     <nav class="nav affix">
         <div class="container">
             <div class="logo">
-                <a href="/index.php?content=accueil">Accueil</a>
+                <a href="/gestion/administration.php?content=accueil">Accueil</a>
             </div>
             <div id="mainListDiv" class="main_list">
                 <ul class="navlinks clients">

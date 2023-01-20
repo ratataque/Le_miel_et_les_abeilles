@@ -1,7 +1,7 @@
 <?php
-echo ("<pre>");
-var_dump($_SESSION);
-echo "</pre>";
+// echo ("<pre>");
+// var_dump($_SESSION);
+// echo "</pre>";
 //echo("a = ".$a);
 
 //unset($_SESSION['faux']);
