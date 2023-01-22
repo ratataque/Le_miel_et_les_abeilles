@@ -40,6 +40,7 @@ if (isset($_POST["email"])) {
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="./js/script.js"></script>
+    <script src="./js/admin_script.js"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.1.0/anime.min.js"></script>
 
