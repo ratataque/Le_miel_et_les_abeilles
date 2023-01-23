@@ -19,6 +19,7 @@ $sql .= "CREATE TABLE IF NOT EXISTS miel(
     nom_miel VARCHAR(50),
     origine_miel VARCHAR(50),
     description_miel VARCHAR(50),
+    lien_photo_miel text,
     prix_miel INT,
     id_apiculteur INT NOT NULL,
     PRIMARY KEY(id_miel),
