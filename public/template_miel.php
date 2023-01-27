@@ -3,6 +3,10 @@
         Miel de Sapin tah les fous 
     </div>
 </div>
+<div class="pancarte cacher_pancarte">
+    <img src="./images/pancarte.png" alt="">
+    <div class="prix">100$</div>
+</div>
 <div class="space_description">
     <div class="description cacher_bas">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui libero laboriosam deserunt similique. Repellat, vitae obcaecati excepturi a repudiandae quas porro aliquid expedita ipsam consequuntur ratione exercitationem quasi similique eligendi.

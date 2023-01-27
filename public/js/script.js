@@ -21,9 +21,9 @@ function init() {
     $(".show").removeClass("show");
 
     if ($("#burger-toggle").is(":checked")) {
-        setTimeout(() => {
-            $("#accueil").css("z-index", -2);
-        }, 300);
+        // setTimeout(() => {
+        //     $("#accueil").css("z-index", -2);
+        // }, 300);
     } else {
         $(".focus").css("z-index", -1);
         $("#start").css("z-index", 2);
@@ -98,8 +98,12 @@ function transi_rond(event, element) {
 
 function miel_click(element) {
 
-    let x = $(element).children().children().offset().left - 30;
-    let y = $(element).children().children().offset().top - 130;
+    // var x = ;
+    // var y = window.innerHeight;
+    console.log(window.innerWidth);
+
+    let x = $(element).children().children().offset().left ;
+    let y = $(element).children().children().offset().top - window.innerHeight*0.12;
     console.log(x, y);
 
     $(".miel_slide").css("transform", "none");
@@ -107,6 +111,8 @@ function miel_click(element) {
 
     if ($(".miel_slide").length == 0) {
         $(".miel_slide").parent().parent().parent().css("overflow", "hidden");
+        // $(".miel_slide").parent().parent().parent().css("pointer-events", "auto");
+        $(".menu .images .image-link .image::before").css("pointer-events", "auto");
         $(".miel_slide").removeClass("miel_slide");
 
         $(".show").removeClass("show");
@@ -118,6 +124,8 @@ function miel_click(element) {
             $(element).children().children().attr("style", "transform: translate(-" + x.toString() + "px, -" + y.toString() + "px) !important")
             // console.log("transform", "translate("+x.toString()+"px, "+y.toString()+"px)");
             $(element).children().children().addClass("miel_slide");
+            $(element).parent().css("pointer-events", "none");
+
             $("#burger-toggle").prop("checked", false);
             init();
             $(".tej").removeClass("tej");
@@ -143,11 +151,17 @@ function miel_click(element) {
         setTimeout(() => {
             $(".cacher").removeClass("cacher");
             $(".cacher_bas").removeClass("cacher_bas");
+            $(".cacher_pancarte").removeClass("cacher_pancarte");
         }, 1100);
 
     } else {
+        $(".titre_miel").addClass("cacher");
+        $(".description").addClass("cacher_bas");
+        $(".pancarte").addClass("cacher_pancarte");
+
         setTimeout(() => {
             $(".miel_slide").parent().parent().parent().css("overflow", "hidden");
+            $(".miel_slide").parent().parent().parent().css("pointer-events", "auto");
             $(".miel_slide").removeClass("miel_slide");
 
             $(".show").removeClass("show");
@@ -159,6 +173,8 @@ function miel_click(element) {
                 $(element).children().children().attr("style", "transform: translate(-" + x.toString() + "px, -" + y.toString() + "px) !important")
                 // console.log("transform", "translate("+x.toString()+"px, "+y.toString()+"px)");
                 $(element).children().children().addClass("miel_slide");
+                $(element).parent().css("pointer-events", "none");
+
                 $("#burger-toggle").prop("checked", false);
                 init();
                 $(".tej").removeClass("tej");
@@ -184,6 +200,7 @@ function miel_click(element) {
         setTimeout(() => {
             $(".cacher").removeClass("cacher");
             $(".cacher_bas").removeClass("cacher_bas");
+            $(".cacher_pancarte").removeClass("cacher_pancarte");
         }, 2200);
     }
 }

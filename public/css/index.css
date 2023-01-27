@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=Lora:400,400i,700");
 
+@font-face {
+    font-family: flash;
+    src: url("../font/flash/Flash.ttf");
+}
+
 body {
     display: flex;
     justify-content: center;
@@ -83,6 +88,7 @@ p {
     transition: 0.9s 0.1s cubic-bezier(0.35, 0, 0.07, 1);
     box-shadow: 0px 10px 20px #555;
     border-radius: 30px;
+    pointer-events: none;
 }
 
 #burger-toggle:checked~.miel_slide {
@@ -109,7 +115,7 @@ p {
     top: 50vh;
     left: 19vw;
     width: 72vw;
-    height: 45vh;
+    height: 44vh;
     overflow: hidden;
     /* background-color: #555;
     border-radius: 30px; */
@@ -118,6 +124,29 @@ p {
 .description {
     font-weight: 700;
     transition: 1.2s 0.1s cubic-bezier(0.35, 0, 0.07, 1);
+}
+
+.pancarte {
+    position: absolute;
+    left: 75vw;
+    top: 0;
+    transition: 1.2s 0.1s cubic-bezier(0.35, 0, 0.07, 1);
+}
+
+.pancarte img {
+    width: 200px;
+}
+
+.prix {
+    position: absolute;
+    transform: translate(60px, -80px);
+    color: rgb(211, 162, 47);
+    font-size: xx-large;
+    font-family: flash;
+}
+
+.cacher_pancarte {
+    transform: translateY(-102%) !important;
 }
 
 
@@ -397,6 +426,7 @@ p {
 
 .menu .images .image-link:hover .image::before {
     opacity: 1;
+    z-index: 10000;
 }
 
 .menu .images img {
