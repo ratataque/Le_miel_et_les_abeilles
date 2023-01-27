@@ -34,6 +34,7 @@ p {
     opacity: 0;
     z-index: -2;
     transition: 0.3s;
+    background-image: url("../images/miel_bg.jpg");
 }
 
 #accueil {
@@ -139,9 +140,9 @@ p {
 
 .prix {
     position: absolute;
-    transform: translate(60px, -80px);
+    transform: translate(40px, -90px);
     color: rgb(211, 162, 47);
-    font-size: xx-large;
+    font-size: 50px;
     font-family: flash;
 }
 
