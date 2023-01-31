@@ -6,6 +6,7 @@ $conn = connection_sql();
 
 $sql = "CREATE TABLE IF NOT EXISTS apiculteur(
     id_apiculteur SERIAL,
+    lien_photo_apiculteur text,
     nom_societe VARCHAR(50),
     nom_apiculteur VARCHAR(50),
     prenom_apiculteur VARCHAR(50),
