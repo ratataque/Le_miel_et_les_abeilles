@@ -149,9 +149,11 @@ function miel_click(element) {
         }, 800);
 
         setTimeout(() => {
-            $(".cacher").removeClass("cacher");
-            $(".cacher_bas").removeClass("cacher_bas");
-            $(".cacher_pancarte").removeClass("cacher_pancarte");
+            console.log($(element).parent().attr("id"));
+
+            $("."+$(element).parent().attr("id")+" .cacher").removeClass("cacher");
+            $("."+$(element).parent().attr("id")+" .cacher_bas").removeClass("cacher_bas");
+            $("."+$(element).parent().attr("id")+" .cacher_pancarte").removeClass("cacher_pancarte");
         }, 1100);
 
     } else {
@@ -198,9 +200,9 @@ function miel_click(element) {
         }, 980);
 
         setTimeout(() => {
-            $(".cacher").removeClass("cacher");
-            $(".cacher_bas").removeClass("cacher_bas");
-            $(".cacher_pancarte").removeClass("cacher_pancarte");
+            $("."+$(element).parent().attr("id")+" .cacher").removeClass("cacher");
+            $("."+$(element).parent().attr("id")+" .cacher_bas").removeClass("cacher_bas");
+            $("."+$(element).parent().attr("id")+" .cacher_pancarte").removeClass("cacher_pancarte");
         }, 2200);
     }
 }

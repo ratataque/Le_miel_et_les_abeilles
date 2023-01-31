@@ -26,6 +26,13 @@ if (isset($_POST["email"])) {
         $login_valide = false;
     }
 }
+
+$conn = pg_connect("host=db dbname=miel user=miel password=miel");
+
+$sql = "SELECT * FROM miel;";
+$miel = pg_fetch_all(pg_query($conn, $sql));
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -121,26 +128,20 @@ if (isset($_POST["email"])) {
                     <p>Miel</p>
                 </div>
                 <div class="images">
-                    <div class="image-link" >
-                        <a href="#" style="display: none;" onclick="miel_click(this)">
-                            <div class="image" data-label="Miel"><img class="show" src="./images/miel.jpg"></div>
-                        </a>
-                    </div>
-                    <div class="image-link" >
-                        <a href="#" style="display: none;" onclick="miel_click(this)">
-                            <div class="image" data-label="Miel"><img class="show" src="./images/miel.jpg"></div>
-                        </a>
-                    </div>
-                    <div class="image-link" >
-                        <a href="#" style="display: none;" onclick="miel_click(this)">
-                            <div class="image" data-label="Miel"><img class="show" src="./images/miel.jpg"></div>
-                        </a>
-                    </div>
-                    <div class="image-link" >
-                        <a href="#" style="display: none;" onclick="miel_click(this)">
-                            <div class="image" data-label="Miel"><img class="show" src="./images/miel.jpg"></div>
-                        </a>
-                    </div>
+                    <?php
+                        for ($i = 0; $i < count($miel); $i++) {
+                            // echo "<pre>";
+                            // var_dump($miel[$i]);
+                            // echo "</pre>";
+
+                            echo "
+                                <div id='miel_".$miel[$i]["id_miel"]."' class='image-link' >
+                                    <a href='#' style='display: none;' onclick='miel_click(this)'>
+                                        <div class='image' data-label='Miel'><img class='show' src='data:image/png;base64, ".$miel[$i]["lien_photo_miel"]."'></div>
+                                    </a>
+                                </div>";
+                        }
+                    ?>
                 </div>
             </div>
         </div>
@@ -155,7 +156,7 @@ if (isset($_POST["email"])) {
     </div>
 
     <div id="template_miel" style="height: 100vh; width: 100vw; background-color: white;">
-        <?php include("./template_miel.php"); ?>
+        <?php include("./template_miel.php") ?>
     </div>
 
     <div id="accueil" style="height: 100vh; width: 100vw; background-color: white;">
