@@ -9,7 +9,7 @@ $sql = "CREATE TABLE IF NOT EXISTS apiculteur(
     nom_societe VARCHAR(50),
     nom_apiculteur VARCHAR(50),
     prenom_apiculteur VARCHAR(50),
-    description_apiculteur VARCHAR(50),
+    description_apiculteur text,
     PRIMARY KEY(id_apiculteur)
 );
 ";
@@ -18,7 +18,7 @@ $sql .= "CREATE TABLE IF NOT EXISTS miel(
     id_miel SERIAL,
     nom_miel VARCHAR(50),
     origine_miel VARCHAR(50),
-    description_miel VARCHAR(50),
+    description_miel text,
     lien_photo_miel text,
     prix_miel INT,
     id_apiculteur INT NOT NULL,
