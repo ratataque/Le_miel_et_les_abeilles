@@ -15,10 +15,10 @@ if (isset($_POST["nom_societe"])) {
     $image_base64 = base64_encode($image_data);
 
     $requete_miel = ("insert into apiculteur (lien_photo_apiculteur, nom_societe, nom_apiculteur, prenom_apiculteur, description_apiculteur ) values ('" . $image_base64 . "',
-                                                                                                                                                '" . pg_escape_string($conn, $_POST["nom_societe"]) . "',
-                                                                                                                                                '" . pg_escape_string($conn, $_POST["nom_apiculteur"]) . "',
-                                                                                                                                                '" . pg_escape_string($conn, $_POST["prenom_apiculteur"]) . "',
-                                                                                                                                                '" . pg_escape_string($conn, $_POST["description_apiculteur"]) . "');");
+                                                                                                                                                '" .pg_escape_string($conn, $_POST["nom_societe"]) . "',
+                                                                                                                                                '" .pg_escape_string($conn, $_POST["nom_apiculteur"]) . "',
+                                                                                                                                                '" .pg_escape_string($conn, $_POST["prenom_apiculteur"]) . "',
+                                                                                                                                                '" .pg_escape_string($conn, $_POST["description_apiculteur"]) . "');");
     pg_query($conn, $requete_miel);
     //echo($requete_miel);
 }
