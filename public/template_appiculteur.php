@@ -20,7 +20,7 @@
                 </div>
                 <div class='pancarte cacher_pancarte'>
                         <img src='./images/pancarte.png' alt=''>
-                        <div class='prix'>". $apiculteur[$i]["nom_societe"] ."$</div>
+                        <div class='prix'>". $apiculteur[$i]["nom_societe"] ."</div>
                 </div>
                 <div class='space_description'>
                     <div class='description cacher_bas'>

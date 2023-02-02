@@ -40,7 +40,7 @@ p {
     background-position: center center; 
 }
 
-#template_apiculteur {
+#template_appiculteur {
     position: absolute;
     opacity: 0;
     z-index: -2;

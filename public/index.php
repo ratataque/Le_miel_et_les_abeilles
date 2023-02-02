@@ -175,8 +175,8 @@ $apiculteur = pg_fetch_all(pg_query($conn, $sql));
         <?php include("./template_miel.php") ?>
     </div>
 
-    <div id="template_apiculteur" style="height: 100vh; width: 100vw; background-color: white;">
-        <?php include("./template_apiculteur.php") ?>
+    <div id="template_appiculteur" style="height: 100vh; width: 100vw; background-color: white;">
+        <?php include("./template_appiculteur.php") ?>
     </div>
 
     <div id="accueil" style="height: 100vh; width: 100vw; background-color: white;">

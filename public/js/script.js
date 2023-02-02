@@ -132,14 +132,16 @@ function miel_click(element) {
 
             $(element).parent().css("overflow", "visible");
             $(".menu").css("opacity", 1);
+            
+            var template = "#template_"+$(element).parent().parent().parent().attr("id"); 
 
-            var page_suivante = $("#template_miel");
+            var page_suivante = $(template);
             var page_precedente = $(".menu");
 
             $(".focus").css("z-index", -1);
             $("#start").css("z-index", parseInt($(".focus").css('z-index')) + 3);
             $(".focus").removeClass("focus");
-            $("#template_miel").addClass("focus");
+            $(template).addClass("focus");
 
             page_suivante.css('z-index', parseInt($(page_precedente).css('z-index')) - 2);
             page_suivante.css("opacity", 1);
@@ -184,13 +186,16 @@ function miel_click(element) {
                 $(element).parent().css("overflow", "visible");
                 $(".menu").css("opacity", 1);
 
-                var page_suivante = $("#template_miel");
+                var template = "#template_"+$(element).parent().parent().parent().attr("id"); 
+
+
+                var page_suivante = $(template);
                 var page_precedente = $(".menu");
 
                 $(".focus").css("z-index", -1);
                 $("#start").css("z-index", parseInt($(".focus").css('z-index')) + 3);
                 $(".focus").removeClass("focus");
-                $("#template_miel").addClass("focus");
+                $(template).addClass("focus");
 
                 page_suivante.css('z-index', parseInt($(page_precedente).css('z-index')) - 2);
                 page_suivante.css("opacity", 1);
