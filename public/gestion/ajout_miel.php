@@ -14,12 +14,12 @@ if (isset($_POST["nom_miel"])) {
     $table_apiculteur = pg_fetch_all(pg_query($conn, $requete_id_apiculteur));
 
     if(!empty($table_apiculteur)){
-        $requete_miel = ("insert into miel (nom_miel, origine_miel, description_miel, lien_photo_miel, prix_miel, id_apiculteur) values ('".$_POST["nom_miel"]."',
-                                                                                                                                        '".$_POST["origine_miel"]."',
-                                                                                                                                        '".$_POST["description_miel"]."',
+        $requete_miel = ("insert into miel (nom_miel, origine_miel, description_miel, lien_photo_miel, prix_miel, id_apiculteur) values ('".pg_escape_string($conn, $_POST["nom_miel"])."',
+                                                                                                                                        '".pg_escape_string($conn, $_POST["origine_miel"])."',
+                                                                                                                                        '".pg_escape_string($conn, $_POST["description_miel"])."',
                                                                                                                                         '".$image_base64."',
                                                                                                                                         ".$_POST["prix_miel"].",
-                                                                                                                                        '".$table_apiculteur[0]["id_apiculteur"]."');");
+                                                                                                                                        '".pg_escape_string($conn, $table_apiculteur[0]["id_apiculteur"])."');");
         pg_query($conn, $requete_miel);
     }
 

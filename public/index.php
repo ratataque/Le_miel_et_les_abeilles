@@ -32,6 +32,8 @@ $conn = pg_connect("host=db dbname=miel user=miel password=miel");
 $sql = "SELECT * FROM miel;";
 $miel = pg_fetch_all(pg_query($conn, $sql));
 
+$sql = "table apiculteur;";
+$apiculteur = pg_fetch_all(pg_query($conn, $sql));
 
 ?>
 <!DOCTYPE html>
@@ -110,7 +112,7 @@ $miel = pg_fetch_all(pg_query($conn, $sql));
                     <p>Appiculteur</p>
                 </div>
                 <div class="images">
-                    <div class="image-link" >
+                    <!-- <div class="image-link" >
                         <a href="#" style="display: none;">
                             <div class="image" data-label="Appiculteur"><img class="show" src="./images/apiculteur.jpg"></div>
                         </a>
@@ -119,7 +121,21 @@ $miel = pg_fetch_all(pg_query($conn, $sql));
                         <a href="#" style="display: none;">
                             <div class="image" data-label="Appiculteur"><img class="show" src="./images/apiculteur.jpg"></div>
                         </a>
-                    </div>
+                    </div> -->
+                    <?php
+                        for ($i = 0; $i < count($apiculteur); $i++) {
+                            // echo "<pre>";
+                            // var_dump($miel[$i]);
+                            // echo "</pre>";
+
+                            echo "
+                                <div id='apiculteur_".$apiculteur[$i]["id_apiculteur"]."' class='image-link' >
+                                    <a href='#' style='display: none;' onclick='miel_click(this)'>
+                                        <div class='image' data-label='Apiculteur'><img class='show' src='data:image/png;base64, ".$apiculteur[$i]["lien_photo_apiculteur"]."'></div>
+                                    </a>
+                                </div>";
+                        }
+                    ?>
                 </div>
             </div>
 
@@ -157,6 +173,10 @@ $miel = pg_fetch_all(pg_query($conn, $sql));
 
     <div id="template_miel" style="height: 100vh; width: 100vw; background-color: white;">
         <?php include("./template_miel.php") ?>
+    </div>
+
+    <div id="template_apiculteur" style="height: 100vh; width: 100vw; background-color: white;">
+        <?php include("./template_apiculteur.php") ?>
     </div>
 
     <div id="accueil" style="height: 100vh; width: 100vw; background-color: white;">
