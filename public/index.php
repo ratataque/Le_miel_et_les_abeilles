@@ -1,6 +1,6 @@
-<?php 
+<?php
 include_once("../db/table.php");
-session_start(); 
+session_start();
 
 if (isset($_GET["do"]) && $_GET["do"] == "deconnexion") {
     unset($_SESSION["utilisateur"]);
@@ -21,7 +21,6 @@ if (isset($_POST["email"])) {
 
         header('Location: /gestion/administration.php');
         exit;
-
     } else {
         $login_valide = false;
     }
@@ -45,7 +44,7 @@ $apiculteur = pg_fetch_all(pg_query($conn, $sql));
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/login.css">    
+    <link rel="stylesheet" href="css/login.css">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="./js/script.js"></script>
@@ -55,6 +54,7 @@ $apiculteur = pg_fetch_all(pg_query($conn, $sql));
 
     <title>Le Miel et les abeilles</title>
 </head>
+
 <body>
     <!-- <h1>Click the burger menu to see the magic.</h1> -->
     <input type="checkbox" id="burger-toggle" onclick="opa();init();">
@@ -89,17 +89,17 @@ $apiculteur = pg_fetch_all(pg_query($conn, $sql));
                             <div class="image" data-label="Appiculteur"><img class="show" src="./images/apiculteur.jpg"></div>
                         </a>
                     </div>
-                    <div class="image-link" >
+                    <div class="image-link">
                         <a href="#" onclick="switch_img('miel')">
                             <div class="image" data-label="Miel"><img class="show" src="./images/miel.jpg"></div>
                         </a>
                     </div>
-                    <div class="image-link" >
+                    <div class="image-link">
                         <a class="btn_projet" href="#" onclick="transi_rond(event, this)">
                             <div class="image" data-label="Projet"><img class="show" src="./images/projet.jpg"></div>
                         </a>
                     </div>
-                    <div class="image-link" >
+                    <div class="image-link">
                         <a class="btn_login" href="#" onclick="transi_rond(event, this)">
                             <div class="image" data-label="Connexion"><img class="show" src="./images/connexion.jpg"></div>
                         </a>
@@ -111,59 +111,71 @@ $apiculteur = pg_fetch_all(pg_query($conn, $sql));
                 <div class="title">
                     <p>Appiculteur</p>
                 </div>
-                <div class="images">
-                    <!-- <div class="image-link" >
-                        <a href="#" style="display: none;">
-                            <div class="image" data-label="Appiculteur"><img class="show" src="./images/apiculteur.jpg"></div>
-                        </a>
-                    </div>
-                    <div class="image-link" >
-                        <a href="#" style="display: none;">
-                            <div class="image" data-label="Appiculteur"><img class="show" src="./images/apiculteur.jpg"></div>
-                        </a>
-                    </div> -->
                     <?php
-                        for ($i = 0; $i < count($apiculteur); $i++) {
-                            // echo "<pre>";
-                            // var_dump($miel[$i]);
-                            // echo "</pre>";
+                    // for ($i = 0; $i < count($apiculteur); $i++) {
+                    //     // echo "<pre>";
+                    //     // var_dump($miel[$i]);
+                    //     // echo "</pre>";
 
-                            echo "
-                                <div id='apiculteur_".$apiculteur[$i]["id_apiculteur"]."' class='image-link' >
-                                    <a href='#' style='display: none;' onclick='miel_click(this)'>
-                                        <div class='image' data-label='Apiculteur'><img class='show' src='data:image/png;base64, ".$apiculteur[$i]["lien_photo_apiculteur"]."'></div>
-                                    </a>
-                                </div>";
-                        }
+                    //     if ($i % 4 == 0) {
+                    //         echo "
+                    //             <div class='images'>
+                    //                 <div id='apiculteur_" . $apiculteur[$i]["id_apiculteur"] . "' class='image-link' >
+                    //                     <a href='#' style='display: none;' onclick='miel_click(this)'>
+                    //                         <div class='image' data-label='Apiculteur'><img class='show' src='data:image/png;base64, " . $apiculteur[$i]["lien_photo_apiculteur"] . "'></div>
+                    //                     </a>
+                    //                 </div>
+                    //             </div> ";
+                    //     } else {
+                    //         echo "
+                    //             <div id='apiculteur_" . $apiculteur[$i]["id_apiculteur"] . "' class='image-link' >
+                    //                 <a href='#' style='display: none;' onclick='miel_click(this)'>
+                    //                     <div class='image' data-label='Apiculteur'><img class='show' src='data:image/png;base64, " . $apiculteur[$i]["lien_photo_apiculteur"] . "'></div>
+                    //                 </a>
+                    //             </div>";
+                    //     }
+                    // }
                     ?>
-                </div>
             </div>
 
             <div id="miel" class="gallery abso">
                 <div class="title">
                     <p>Miel</p>
                 </div>
-                <div class="images">
+                <div class='images'>
                     <?php
-                        for ($i = 0; $i < count($miel); $i++) {
-                            // echo "<pre>";
-                            // var_dump($miel[$i]);
-                            // echo "</pre>";
-
-                            echo "
-                                <div id='miel_".$miel[$i]["id_miel"]."' class='image-link' >
-                                    <a href='#' style='display: none;' onclick='miel_click(this)'>
-                                        <div class='image' data-label='".$miel[$i]["nom_miel"]."'><img class='show' src='data:image/png;base64, ".$miel[$i]["lien_photo_miel"]."'></div>
-                                    </a>
-                                </div>";
+                    $images = "";
+                    for ($i = 0; $i < count($miel); $i++) {
+                        // echo "<pre>";
+                        // var_dump($miel[$i]);
+                        // echo "</pre>";
+                    
+                        if ($i % 4 == 0) {
+                            $images .= "<div class='images'>";
                         }
+
+                        $images .= "
+                            <div id='miel_" . $miel[$i]["id_miel"] . "' class='image-link' >
+                                <a href='#' style='display: none;' onclick='miel_click(this)'>
+                                    <div class='image' data-label='" . $miel[$i]["nom_miel"] . "'><img class='show' src='data:image/png;base64, " . $miel[$i]["lien_photo_miel"] . "'></div>
+                                </a>
+                            </div>";
+
+                        if ($i % 4 == 3) {
+                            $images .= "</div>";
+                        }
+                    }
+                    $images .= "</div>";
+                    echo $images;
                     ?>
                 </div>
             </div>
         </div>
     </div>
 
-    <div id="login" style="height: 100vh; width: 100vw; background-image: url('./images/background_miel.jpg'); background-size: cover; <?php if(isset($_POST['email'])) { echo "z-index: 1;";}; ?> ">
+    <div id="login" style="height: 100vh; width: 100vw; background-image: url('./images/background_miel.jpg'); background-size: cover; <?php if (isset($_POST['email'])) {
+                                                                                                                                            echo "z-index: 1;";
+                                                                                                                                        }; ?> ">
         <?php include("./login.php"); ?>
     </div>
 
