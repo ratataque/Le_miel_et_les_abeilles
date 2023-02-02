@@ -137,7 +137,7 @@ $miel = pg_fetch_all(pg_query($conn, $sql));
                             echo "
                                 <div id='miel_".$miel[$i]["id_miel"]."' class='image-link' >
                                     <a href='#' style='display: none;' onclick='miel_click(this)'>
-                                        <div class='image' data-label='Miel'><img class='show' src='data:image/png;base64, ".$miel[$i]["lien_photo_miel"]."'></div>
+                                        <div class='image' data-label='".$miel[$i]["nom_miel"]."'><img class='show' src='data:image/png;base64, ".$miel[$i]["lien_photo_miel"]."'></div>
                                     </a>
                                 </div>";
                         }
