@@ -66,10 +66,10 @@ $apiculteur = pg_fetch_all(pg_query($conn, $sql));
     <div class="menu">
         <div class="menu-inner">
             <ul class="menu-nav">
-                <li class="menu-nav-item"><a class="menu-nav-link" href="#" onclick="switch_img('appiculteur')"><span>
+                <li class="menu-nav-item"><a class="menu-nav-link" href="#" onclick="switch_img('appiculteur', 'miel')"><span>
                             <div>Nos Apiculteurs</div>
                         </span></a></li>
-                <li class="menu-nav-item"><a class="menu-nav-link" href="#" onclick="switch_img('miel')"><span>
+                <li class="menu-nav-item"><a class="menu-nav-link" href="#" onclick="switch_img('miel', 'appiculteur')"><span>
                             <div>Nos Miels</div>
                         </span></a></li>
                 <li class="menu-nav-item"><a class="menu-nav-link btn_projet" href="#" onclick="transi_rond(event, this)"><span>
@@ -85,12 +85,12 @@ $apiculteur = pg_fetch_all(pg_query($conn, $sql));
                 </div>
                 <div class="images">
                     <div class="image-link">
-                        <a href="#" onclick="switch_img('appiculteur')">
+                        <a href="#" onclick="switch_img('appiculteur', 'miel')">
                             <div class="image" data-label="Appiculteur"><img class="show" src="./images/apiculteur.jpg"></div>
                         </a>
                     </div>
                     <div class="image-link">
-                        <a href="#" onclick="switch_img('miel')">
+                        <a href="#" onclick="switch_img('miel', 'appiculteur')">
                             <div class="image" data-label="Miel"><img class="show" src="./images/miel.jpg"></div>
                         </a>
                     </div>
@@ -142,16 +142,17 @@ $apiculteur = pg_fetch_all(pg_query($conn, $sql));
                 <div class="title">
                     <p>Miel</p>
                 </div>
-                <div class='images'>
+                <!-- <div class='images'> -->
                     <?php
-                    $images = "";
+                    $images = "<div class='images'>";
                     for ($i = 0; $i < count($miel); $i++) {
                         // echo "<pre>";
                         // var_dump($miel[$i]);
                         // echo "</pre>";
                     
-                        if ($i % 4 == 0) {
-                            $images .= "<div class='images'>";
+                        if ($i % 4 == 0 && $i != 0) {
+                            $decal = abs((int)($i / 4) - 1) * 30;
+                            $images .= "<div class='images' style='position: absolute; transform: translateY($decal"."vh);'>";
                         }
 
                         $images .= "
@@ -168,7 +169,7 @@ $apiculteur = pg_fetch_all(pg_query($conn, $sql));
                     $images .= "</div>";
                     echo $images;
                     ?>
-                </div>
+                <!-- </div> -->
             </div>
         </div>
     </div>

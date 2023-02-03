@@ -1,5 +1,6 @@
-function switch_img(next_div) {
+function switch_img(next_div, prec_div) {
     $(".show").removeClass("show");
+    $(".menu #" + next_div + " .image-link a").show();
 
     setTimeout(() => {
         $(".focus").css("z-index", -1);
@@ -11,8 +12,8 @@ function switch_img(next_div) {
 
     setTimeout(() => {
         $(".menu #" + next_div + " .title p").addClass("show");
-        $(".menu #" + next_div + " .image-link a").show();
         $(".menu #" + next_div + " .image img").addClass("show");
+        $(".menu #" + prec_div + " .image-link a").hide();
     }, 800);
 }
 
@@ -25,6 +26,10 @@ function init() {
         //     $("#accueil").css("z-index", -2);
         // }, 300);
     } else {
+        $(".menu #miel .image-link a").hide();
+        $(".menu #appiculteur .image-link a").hide();
+
+        $(".menu").scrollTop(0);
         $(".focus").css("z-index", -1);
         $("#start").css("z-index", 2);
     }
@@ -102,8 +107,9 @@ function miel_click(element) {
     // var y = window.innerHeight;
     console.log(window.innerWidth);
 
-    let x = $(element).children().children().offset().left ;
-    let y = $(element).children().children().offset().top - window.innerHeight*0.12;
+    let x = $(element).parent().offset().left - window.innerWidth*0.05;
+
+    let y = $(element).parent().offset().top - window.innerHeight*0.15;
     console.log(x, y);
 
     $(".miel_slide").css("transform", "none");
@@ -121,6 +127,10 @@ function miel_click(element) {
         $(element).children().children().addClass("show");
 
         setTimeout(() => {
+            // setTimeout(() => {
+            //     $(".menu").scrollTop(0);
+            // }, 2000);
+
             $(element).children().children().attr("style", "transform: translate(-" + x.toString() + "px, -" + y.toString() + "px) !important")
             // console.log("transform", "translate("+x.toString()+"px, "+y.toString()+"px)");
             $(element).children().children().addClass("miel_slide");
