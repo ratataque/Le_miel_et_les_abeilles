@@ -13,7 +13,7 @@ function switch_img(next_div, prec_div) {
     setTimeout(() => {
         $(".menu #" + next_div + " .title p").addClass("show");
         $(".menu #" + next_div + " .image img").addClass("show");
-        $(".menu #" + prec_div + " .image-link a").hide();
+        $(".menu #" + prec_div + " .image-link a").not($(".miel_slide").parent().parent()).hide();
     }, 800);
 }
 
@@ -25,9 +25,11 @@ function init() {
         // setTimeout(() => {
         //     $("#accueil").css("z-index", -2);
         // }, 300);
+        $(".menu #start .image-link a").show();
     } else {
-        $(".menu #miel .image-link a").hide();
-        $(".menu #appiculteur .image-link a").hide();
+        // $(".menu #miel .image-link a").hide();
+        // $(".menu #appiculteur .image-link a").hide();
+        $(".menu .image-link a").not($(".miel_slide").parent().parent()).hide();
 
         $(".menu").scrollTop(0);
         $(".focus").css("z-index", -1);
@@ -42,7 +44,6 @@ function init() {
     $("#start").addClass("focus");
 
     $(".menu #start .title p").addClass("show");
-    $(".menu #start .image-link a").show();
     $(".menu #start .image img").addClass("show");
 
 }
@@ -58,6 +59,20 @@ function opa() {
 function transi_rond(event, element) {
     var x = event.pageX;
     var y = event.pageY;
+
+    $(".miel_slide").parent().parent().parent().css("overflow", "hidden");
+    $(".menu .images .image-link").css("pointer-events", "auto");
+
+    $(".miel_slide").addClass("show");
+
+    $(".miel_slide").css("transform", "none");
+    $(".miel_slide").css("opacity", 1);
+
+    $(".miel_slide").removeClass("miel_slide");
+
+    $(".titre_miel").addClass("cacher");
+    $(".description").addClass("cacher_bas");
+    $(".pancarte").addClass("cacher_pancarte");
 
     if ($(element).hasClass("btn_login")) {
         page_suivante = $("#login");
@@ -111,6 +126,8 @@ function miel_click(element) {
 
     let y = $(element).parent().offset().top - window.innerHeight*0.15;
     console.log(x, y);
+
+    $(".menu #start .image-link a").hide();
 
     $(".miel_slide").css("transform", "none");
     $(".miel_slide").css("opacity", 1);
@@ -207,7 +224,7 @@ function miel_click(element) {
 
                 $(".miel_slide").css("z-index", parseInt($(page_precedente).css('z-index')) - 1);
             }, 750);
-        }, 980);
+        }, 1180);
 
         setTimeout(() => {
             $("."+$(element).parent().attr("id")+" .cacher").removeClass("cacher");
