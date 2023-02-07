@@ -139,33 +139,10 @@ $apiculteur = pg_fetch_all(pg_query($conn, $sql));
                             $images .= "</div>";
                         }
                     }
-                    $images .= "</div>";
+                    if ($i % 4 != 0) {
+                        $images .= "</div>";
+                    }
                     echo $images;
-                    ?>
-                    <?php
-                    // for ($i = 0; $i < count($apiculteur); $i++) {
-                    //     // echo "<pre>";
-                    //     // var_dump($miel[$i]);
-                    //     // echo "</pre>";
-
-                    //     if ($i % 4 == 0) {
-                    //         echo "
-                    //             <div class='images'>
-                    //                 <div id='apiculteur_" . $apiculteur[$i]["id_apiculteur"] . "' class='image-link' >
-                    //                     <a href='#' style='display: none;' onclick='miel_click(this)'>
-                    //                         <div class='image' data-label='Apiculteur'><img class='show' src='data:image/png;base64, " . $apiculteur[$i]["lien_photo_apiculteur"] . "'></div>
-                    //                     </a>
-                    //                 </div>
-                    //             </div> ";
-                    //     } else {
-                    //         echo "
-                    //             <div id='apiculteur_" . $apiculteur[$i]["id_apiculteur"] . "' class='image-link' >
-                    //                 <a href='#' style='display: none;' onclick='miel_click(this)'>
-                    //                     <div class='image' data-label='Apiculteur'><img class='show' src='data:image/png;base64, " . $apiculteur[$i]["lien_photo_apiculteur"] . "'></div>
-                    //                 </a>
-                    //             </div>";
-                    //     }
-                    // }
                     ?>
             </div>
 
@@ -197,7 +174,9 @@ $apiculteur = pg_fetch_all(pg_query($conn, $sql));
                             $images .= "</div>";
                         }
                     }
-                    $images .= "</div>";
+                    if ($i % 4 != 0) {
+                        $images .= "</div>";
+                    }
                     echo $images;
                     ?>
                 <!-- </div> -->
