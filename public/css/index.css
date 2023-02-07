@@ -68,7 +68,7 @@ p {
 }
 
 .cacher {
-    transform: translateX(-70%) !important;
+    transform: translateX(calc(-102% - 10vw)) !important;
 }
 
 .cacher_bas {
@@ -124,7 +124,7 @@ p {
     position: absolute;
     top: 26vh;
     left: 24vw;
-    width: 70vw;
+    /* width: 70vw; */
     overflow: hidden;
 }
 
