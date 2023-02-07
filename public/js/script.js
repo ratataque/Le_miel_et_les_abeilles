@@ -36,7 +36,7 @@ function init() {
         $("#start").css("z-index", 2);
     }
 
-    if (parseInt($(".focus").css('z-index')) > parseInt($(".menu").css('z-index'))) {
+    if (parseInt($(".focus").css('z-index'))+1 >= parseInt($(".menu").css('z-index'))) {
         $(".menu").css("z-index", parseInt($(".focus").css('z-index')) + 3);
     }
 
@@ -170,10 +170,10 @@ function miel_click(element) {
             $(".focus").removeClass("focus");
             $(template).addClass("focus");
 
-            page_suivante.css('z-index', parseInt($(page_precedente).css('z-index')) - 2);
+            page_suivante.css('z-index', parseInt($(page_precedente).css('z-index')) - 1);
             page_suivante.css("opacity", 1);
 
-            $(".miel_slide").css("z-index", parseInt($(page_precedente).css('z-index')) - 1);
+            $(".miel_slide").css("z-index", parseInt($(page_precedente).css('z-index')));
 
         }, 800);
 
@@ -224,10 +224,10 @@ function miel_click(element) {
                 $(".focus").removeClass("focus");
                 $(template).addClass("focus");
 
-                page_suivante.css('z-index', parseInt($(page_precedente).css('z-index')) - 2);
+                page_suivante.css('z-index', parseInt($(page_precedente).css('z-index')) - 1);
                 page_suivante.css("opacity", 1);
 
-                $(".miel_slide").css("z-index", parseInt($(page_precedente).css('z-index')) - 1);
+                $(".miel_slide").css("z-index", parseInt($(page_precedente).css('z-index')));
             }, 750);
         }, 1180);
 

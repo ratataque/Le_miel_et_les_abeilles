@@ -117,6 +117,32 @@ $apiculteur = pg_fetch_all(pg_query($conn, $sql));
                     <p>Appiculteur</p>
                 </div>
                     <?php
+                    $images = "<div class='images'>";
+                    for ($i = 0; $i < count($apiculteur); $i++) {
+                    
+                        if ($i % 4 == 0 && $i != 0) {
+                            $decal = abs((int)($i / 4) - 1) * 30;
+                            if ($is_mobil) {
+                                $decal *= 2;
+                            }
+                            $images .= "<div class='images' style='position: absolute; transform: translateY($decal"."vh);'>";
+                        }
+
+                        $images .= "
+                            <div id='apiculteur_" . $apiculteur[$i]["id_apiculteur"] . "' class='image-link' >
+                                <a href='#' style='display: none;' onclick='miel_click(this)'>
+                                    <div class='image' data-label='" . $apiculteur[$i]["nom_apiculteur"] . "'><img class='show' src='data:image/png;base64, " . $apiculteur[$i]["lien_photo_apiculteur"] . "'></div>
+                                </a>
+                            </div>";
+
+                        if ($i % 4 == 3) {
+                            $images .= "</div>";
+                        }
+                    }
+                    $images .= "</div>";
+                    echo $images;
+                    ?>
+                    <?php
                     // for ($i = 0; $i < count($apiculteur); $i++) {
                     //     // echo "<pre>";
                     //     // var_dump($miel[$i]);
@@ -151,9 +177,6 @@ $apiculteur = pg_fetch_all(pg_query($conn, $sql));
                     <?php
                     $images = "<div class='images'>";
                     for ($i = 0; $i < count($miel); $i++) {
-                        // echo "<pre>";
-                        // var_dump($miel[$i]);
-                        // echo "</pre>";
                     
                         if ($i % 4 == 0 && $i != 0) {
                             $decal = abs((int)($i / 4) - 1) * 30;
