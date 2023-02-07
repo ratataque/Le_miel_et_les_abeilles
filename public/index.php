@@ -60,6 +60,7 @@ $apiculteur = pg_fetch_all(pg_query($conn, $sql));
 </head>
 
 <body>
+    <!-- <div style="background-color: red; width: 100%; z-index: 111111;">test</div> -->
     <!-- <h1>Click the burger menu to see the magic.</h1> -->
     <input type="checkbox" id="burger-toggle" onclick="opa();init();">
     <label for="burger-toggle" class="burger-menu">
@@ -156,6 +157,9 @@ $apiculteur = pg_fetch_all(pg_query($conn, $sql));
                     
                         if ($i % 4 == 0 && $i != 0) {
                             $decal = abs((int)($i / 4) - 1) * 30;
+                            if ($is_mobil) {
+                                $decal *= 2;
+                            }
                             $images .= "<div class='images' style='position: absolute; transform: translateY($decal"."vh);'>";
                         }
 
