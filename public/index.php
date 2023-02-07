@@ -2,6 +2,10 @@
 include_once("../db/table.php");
 session_start();
 
+$useragent=$_SERVER['HTTP_USER_AGENT'];
+
+$is_mobil = preg_match("/(android|webos|avantgo|iphone|ipad|ipod|blackberry|iemobile|bolt|boost|cricket|docomo|fone|hiptop|mini|opera mini|kitkat|mobi|palm|phone|pie|tablet|up\.browser|up\.link|webos|wos)/i", $_SERVER["HTTP_USER_AGENT"]);
+
 if (isset($_GET["do"]) && $_GET["do"] == "deconnexion") {
     unset($_SESSION["utilisateur"]);
 }
@@ -192,7 +196,7 @@ $apiculteur = pg_fetch_all(pg_query($conn, $sql));
         <?php include("./template_apiculteur.php") ?>
     </div>
 
-    <div id="accueil" style="height: 100vh; width: 100vw; background-color: white;">
+    <div id="accueil" style="height: 100vh; width: 100vw;">
         <?php include("./accueil.php"); ?>
     </div>
 </body>

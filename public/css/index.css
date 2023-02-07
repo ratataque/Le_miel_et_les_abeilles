@@ -245,6 +245,12 @@ p {
     cursor: pointer;
 }
 
+@media screen and (max-width: 750px) {
+    .burger-menu {
+        left: 75px;
+    }
+}
+
 .burger-menu .line {
     position: absolute;
     left: 25%;
@@ -462,4 +468,10 @@ p {
     position: relative;
     /* left: 50%;
     transform: translateX(-50%); */
+}
+
+.mobil img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
 }
