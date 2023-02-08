@@ -14,5 +14,6 @@ RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/sites-av
 RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/apache2.conf /etc/apache2/conf-available/*.conf
 
 RUN mkdir /miel
-COPY . /miel
+COPY .. /miel
+COPY ../config/php.ini /usr/local/etc/php/php.ini
 

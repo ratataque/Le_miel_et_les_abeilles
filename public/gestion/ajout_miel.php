@@ -3,11 +3,15 @@
 //var_dump($_FILES);
 //echo ("</pre>");
 $conn = pg_connect("host=db dbname=miel user=miel password=miel");
+// phpinfo();
+echo ("<pre>");
+var_dump($_FILES);
+echo ("</pre>");
 
 if (isset($_POST["nom_miel"])) {
 
     $image = $_FILES['photo']['tmp_name'];
-    $image_data = file_get_contents($image);
+    $image_data = file_get_contents($image,);
     $image_base64 = base64_encode($image_data);
 
     $requete_id_apiculteur = "SELECT id_apiculteur FROM apiculteur where nom_societe = '" . $_POST["apiculteur"] . "';";
