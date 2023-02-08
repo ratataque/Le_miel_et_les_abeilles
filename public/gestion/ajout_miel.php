@@ -4,9 +4,9 @@
 //echo ("</pre>");
 $conn = pg_connect("host=db dbname=miel user=miel password=miel");
 // phpinfo();
-echo ("<pre>");
-var_dump($_FILES);
-echo ("</pre>");
+// echo ("<pre>");
+// var_dump($_FILES);
+// echo ("</pre>");
 
 if (isset($_POST["nom_miel"])) {
 
