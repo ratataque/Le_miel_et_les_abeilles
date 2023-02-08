@@ -68,7 +68,7 @@ p {
 }
 
 .cacher {
-    transform: translateX(calc(-102% - 10vw)) !important;
+    transform: translateX(calc(-103% - 10vw)) !important;
 }
 
 .cacher_bas {
@@ -116,6 +116,12 @@ p {
     pointer-events: none;
 }
 
+@media screen and (max-width: 750px) {
+    .miel_slide {
+        width: 45vw !important;
+    }
+}
+
 #burger-toggle:checked~.miel_slide {
     opacity: 0.2;
 }
@@ -126,6 +132,16 @@ p {
     left: 24vw;
     /* width: 70vw; */
     overflow: hidden;
+}
+
+@media screen and (max-width: 750px) {
+    .space_titre {
+        top: 42vh !important;
+        left: 12vw !important;
+    }
+    .space_description {
+        left: 10vw !important;
+    }
 }
 
 .titre_miel {
@@ -160,6 +176,19 @@ p {
 
 .pancarte img {
     width: 200px;
+}
+
+@media screen and (max-width: 750px) {
+    .pancarte {
+        left: 72vw !important;
+    }
+    .pancarte img {
+    width: 100px;
+    }
+    .prix {
+        font-size: 30px !important;
+        transform: translateY(-50px) !important;
+    }
 }
 
 .prix {
@@ -486,4 +515,3 @@ p {
     height: 100%;
     width: 100%;
 }
-

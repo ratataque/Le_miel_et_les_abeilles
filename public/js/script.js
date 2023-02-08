@@ -117,15 +117,21 @@ function transi_rond(event, element) {
 
 
 function miel_click(element) {
+    $(':focus').blur()
 
-    // var x = ;
-    // var y = window.innerHeight;
     console.log(window.innerWidth);
 
-    let x = $(element).parent().offset().left - window.innerWidth*0.05;
+    if (window.innerWidth < 800) {
+        var x = $(element).parent().offset().left - window.innerWidth*0.02;
+        var y = $(element).parent().offset().top - window.innerHeight*0.05;
+    } else {
+        var x = $(element).parent().offset().left - window.innerWidth*0.05;
+        var y = $(element).parent().offset().top - window.innerHeight*0.15;
+    }
 
-    let y = $(element).parent().offset().top - window.innerHeight*0.15;
-    console.log(x, y);
+
+    // let x = $(element).parent().offset().left - window.innerWidth*0.05;
+    // let y = $(element).parent().offset().top - window.innerHeight*0.15;
 
     $(".menu #start .image-link a").hide();
 
@@ -237,4 +243,5 @@ function miel_click(element) {
             $("."+$(element).parent().attr("id")+" .cacher_pancarte").removeClass("cacher_pancarte");
         }, 2200);
     }
+    $(':focus').blur()
 }

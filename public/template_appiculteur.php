@@ -1,9 +1,4 @@
 <?php
-    // $conn = pg_connect("host=db dbname=miel user=miel password=miel");
-
-    // $sql = "SELECT * FROM miel;";
-    // $miel = pg_fetch_all(pg_query($conn, $sql));
-
     for ($i = 0; $i < count($apiculteur); $i++) {
         // echo "<pre>";
         // var_dump($miel[$i]);
