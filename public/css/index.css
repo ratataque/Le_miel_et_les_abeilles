@@ -141,6 +141,7 @@ p {
     }
     .space_description {
         left: 10vw !important;
+        top: 50vh !important;
     }
 }
 
@@ -153,7 +154,7 @@ p {
 
 .space_description {
     position:  absolute;
-    top: 50vh;
+    top: max(440px, 50vh);
     left: 19vw;
     width: 72vw;
     height: 44vh;

@@ -3,9 +3,9 @@
 //var_dump($_POST);
 //echo ("</pre>");
 
-echo ("<pre>");
-var_dump($_FILES);
-echo ("</pre>");
+// echo ("<pre>");
+// var_dump($_FILES);
+// echo ("</pre>");
 $conn = pg_connect("host=db dbname=miel user=miel password=miel");
 
 if (isset($_POST["nom_societe"])) {

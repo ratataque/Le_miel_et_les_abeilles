@@ -135,13 +135,11 @@ $apiculteur = pg_fetch_all(pg_query($conn, $sql));
                                 </a>
                             </div>";
 
-                        if ($i % 4 == 3) {
+                        if ($i % 4 == 3 && $i != count($apiculteur)) {
                             $images .= "</div>";
                         }
                     }
-                    if ($i % 4 != 0) {
-                        $images .= "</div>";
-                    }
+                    $images .= "</div>";
                     echo $images;
                     ?>
             </div>
@@ -170,13 +168,11 @@ $apiculteur = pg_fetch_all(pg_query($conn, $sql));
                                 </a>
                             </div>";
 
-                        if ($i % 4 == 3) {
+                        if ($i % 4 == 3 && $i != count($miel)) {
                             $images .= "</div>";
                         }
                     }
-                    if ($i % 4 != 0) {
-                        $images .= "</div>";
-                    }
+                    $images .= "</div>";
                     echo $images;
                     ?>
                 <!-- </div> -->
