@@ -40,7 +40,7 @@ if (!isset($_SESSION["utilisateur"])) {
             </div>
             <div id="mainListDiv" class="main_list">
                 <ul class="navlinks clients">
-                    <li><a class="titre" id="classe" href="/gestion/administration.php?content=class">Classe</a></li>
+                    <li><a class="titre" id="classe" href="/gestion/administration.php?content=gestion_miel">Gestion</a></li>
                     <li><a class="titre" id="facture" href="/gestion/administration.php?content=bidouille_karl">test</a></li>
                     <li><a class="titre" id="ajout_apiculteur" href="/gestion/administration.php?content=ajout_apiculteur">Ajout Apiculteur</a></li>
                     <li><a class="titre" id="ajout_miel" href="/gestion/administration.php?content=ajout_miel">Ajout Miel</a></li>
