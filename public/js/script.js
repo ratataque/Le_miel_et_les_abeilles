@@ -18,8 +18,9 @@ function switch_img(next_div, prec_div) {
 }
 
 function init() {
+    console.log($(".menu").scrollTop());
 
-    $(".show").removeClass("show");
+    $(".show").not($(".miel_slide")).removeClass("show");
 
     if ($("#burger-toggle").is(":checked")) {
         // setTimeout(() => {
@@ -31,7 +32,10 @@ function init() {
         // $(".menu #appiculteur .image-link a").hide();
         $(".menu .image-link a").not($(".miel_slide").parent().parent()).hide();
 
-        $(".menu").scrollTop(0);
+        // $(".menu").scrollTop(0);
+        // $(".miel_slide").css("position", "fixed");
+        // $(".miel_slide").css("left", "unset");
+
         $(".focus").css("z-index", -1);
         $("#start").css("z-index", 2);
     }
@@ -67,6 +71,8 @@ function transi_rond(event, element) {
 
     $(".miel_slide").css("transform", "none");
     $(".miel_slide").css("opacity", 1);
+    $(".miel_slide").css("position", "relative");
+    $(".miel_slide").css("left", "50%");
 
     $(".miel_slide").removeClass("miel_slide");
 
@@ -117,26 +123,26 @@ function transi_rond(event, element) {
 
 
 function miel_click(element) {
-    $(':focus').blur()
-
+    $("body").click();
+    
     console.log(window.innerWidth);
 
     if (window.innerWidth < 800) {
+
         var x = $(element).parent().offset().left - window.innerWidth*0.02;
-        var y = $(element).parent().offset().top - window.innerHeight*0.05;
+        var y = $(element).parent().offset().top - window.innerHeight*0.05 + $(".menu").scrollTop();
     } else {
         var x = $(element).parent().offset().left - window.innerWidth*0.05;
+        // var y = $(element).parent().offset().top - window.innerHeight*0.15 + $(".menu").scrollTop();
         var y = $(element).parent().offset().top - window.innerHeight*0.15;
     }
-
-
-    // let x = $(element).parent().offset().left - window.innerWidth*0.05;
-    // let y = $(element).parent().offset().top - window.innerHeight*0.15;
 
     $(".menu #start .image-link a").hide();
 
     $(".miel_slide").css("transform", "none");
     $(".miel_slide").css("opacity", 1);
+    $(".miel_slide").css("position", "relative");
+    $(".miel_slide").css("left", "50%");
 
     if ($(".miel_slide").length == 0) {
         $(".miel_slide").parent().parent().parent().css("overflow", "hidden");
@@ -154,7 +160,10 @@ function miel_click(element) {
             //     $(".menu").scrollTop(0);
             // }, 2000);
 
-            $(element).children().children().attr("style", "transform: translate(-" + x.toString() + "px, -" + y.toString() + "px) !important")
+            $(element).children().children().attr("style", "transform: translate(-" + x.toString() + "px, -" + y.toString() + "px) !important");
+
+            // $(element).children().children().css("bottom", "0%");
+
             // console.log("transform", "translate("+x.toString()+"px, "+y.toString()+"px)");
             $(element).children().children().addClass("miel_slide");
             $(element).parent().css("pointer-events", "none");
@@ -189,6 +198,14 @@ function miel_click(element) {
             $("."+$(element).parent().attr("id")+" .cacher").removeClass("cacher");
             $("."+$(element).parent().attr("id")+" .cacher_bas").removeClass("cacher_bas");
             $("."+$(element).parent().attr("id")+" .cacher_pancarte").removeClass("cacher_pancarte");
+
+            // $(".menu").scrollTop(0);
+            var ini_y = $(element).parent().offset().top;
+
+            $(element).children().children().css({"position": "fixed",
+                                                    "left": "unset",
+                                                    "top": ini_y});  
+    
         }, 1100);
 
     } else {
@@ -207,7 +224,12 @@ function miel_click(element) {
             $(element).children().children().addClass("show");
 
             setTimeout(() => {
+                $(element).children().children().css({"position": "fixed",
+                                                        "left": "unset",
+                                                        "bottom": $(".menu").scrollTop()});  
+
                 $(element).children().children().attr("style", "transform: translate(-" + x.toString() + "px, -" + y.toString() + "px) !important")
+
                 // console.log("transform", "translate("+x.toString()+"px, "+y.toString()+"px)");
                 $(element).children().children().addClass("miel_slide");
                 $(element).parent().css("pointer-events", "none");
@@ -241,7 +263,8 @@ function miel_click(element) {
             $("."+$(element).parent().attr("id")+" .cacher").removeClass("cacher");
             $("."+$(element).parent().attr("id")+" .cacher_bas").removeClass("cacher_bas");
             $("."+$(element).parent().attr("id")+" .cacher_pancarte").removeClass("cacher_pancarte");
+
+            // $(".menu").scrollTop(0);
         }, 2200);
     }
-    $(':focus').blur()
 }

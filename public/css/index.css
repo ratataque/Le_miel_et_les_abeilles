@@ -77,12 +77,12 @@ p {
 
 /* .show {
     transform: translate(-50%, 0) !important;
-    transition: 1.2s 0.1s cubic-bezier(0.35, 0, 0.07, 1);
 } */
 
 .abso {
     position: absolute;
-    transform: translateY(-113%);
+    /* transform: translateY(-113%); */
+    top: 34vh;
 }
 
 #start {
@@ -120,6 +120,9 @@ p {
     .miel_slide {
         width: 45vw !important;
     }
+    .abso {
+        top: 20vh;
+    }
 }
 
 #burger-toggle:checked~.miel_slide {
@@ -150,6 +153,8 @@ p {
     font-size: xx-large;
     font-weight: 900;
     transition: 1.2s 0.1s cubic-bezier(0.35, 0, 0.07, 1);
+    /* border-top: 6px solid #666666;
+    border-right: 6px solid #666666; */
 }
 
 .space_description {
@@ -166,6 +171,8 @@ p {
 .description {
     font-weight: 700;
     transition: 1.2s 0.1s cubic-bezier(0.35, 0, 0.07, 1);
+    /* border-top: 6px solid #666666;
+    border-left: 6px solid #666666; */
 }
 
 .pancarte {
@@ -448,7 +455,7 @@ p {
 
 .menu .images .image-link {
     width: 15vw;
-    height: 26vh;
+    height: 250px;
     margin: 0 12px;
     overflow: hidden;
     animation: show-overflow 2s;
@@ -485,13 +492,16 @@ p {
     transition: 0.4s;
 }
 
-.menu .images .image-link .image:hover {
+@media (hover: hover) and (pointer: fine) {
+    .menu .images .image-link .image:hover {
     transform: scale(1.2, 1.2);
-}
+    }
 
-.menu .images .image-link:hover .image::before {
+    .menu .images .image-link:hover .image::before {
     opacity: 1;
+
     z-index: 10000;
+    }
 }
 
 .menu .images img {
