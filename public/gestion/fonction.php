@@ -211,8 +211,12 @@ function affich_Table_miel($tableData, $id)
                                         case "id_apiculteur":
                                             echo ("<td>");
                                             echo ('
+        <div class="row">
+        <div class="text-center">
         <div class="form-check">
         <input class="form-check-input" type="checkbox" name="' . $ligne["id_miel"] . '" value="X">
+        </div>
+        </div>
         </div>
         ');
 
@@ -234,3 +238,49 @@ function affich_Table_miel($tableData, $id)
                                     echo ('</div>');
                                     echo ('</div>');
 }
+
+function affichTable($tableData, $titre){
+    ?>
+    
+        <div class="row text-center  h3">
+            <b style="margin-top:5vh;"><?php echo($titre); ?></b>
+        </div>
+        <div class="row">
+            <div>
+                <table class="table table-striped table-dark h5">
+    
+                    <thead class="thead-dark">
+                        <tr>
+                            <?php
+                            foreach ($tableData  as $ligne) {
+                                if(next($tableData)){
+                                }else{
+                                    foreach ($ligne  as $champ => $value) {
+                                        //echo($champ);
+                                        echo ("<th scope='col'>".$champ."</th>");
+                                    }
+                                }    
+    
+                            } ?>
+                        </tr>
+                    </thead>
+    
+                    <tbody>
+    
+                <?php
+    
+    
+                echo ('<div class="row">');
+                foreach ($tableData  as $ligne) {
+                    echo ("<tr>");
+                    foreach ($ligne  as $champ => $value) {
+                        //echo($champ);
+                        echo ("<td>" . $value . "</td>");
+                    } 
+                    echo ("</tr>");
+                } 
+                echo ('</tbody>');
+                echo ('</table>');
+                echo ('</div>');
+                echo ('</div>');
+            }

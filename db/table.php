@@ -28,12 +28,16 @@ $sql .= "CREATE TABLE IF NOT EXISTS miel(
 );
 ";     
 
-$sql .= "CREATE TABLE IF NOT EXISTS classe_eleve(
-    id_classe SERIAL,
-    nom_classe VARCHAR(50),
-    PRIMARY KEY(id_classe)
+$sql .= "CREATE TABLE IF NOT EXISTS niveau(
+    id_niveau SERIAL,
+    nom_niveau VARCHAR(50),
+    PRIMARY KEY(id_niveau)
 );
-";     
+";   
+
+$sql .= "
+
+";
 
 $sql .= "CREATE TABLE IF NOT EXISTS eleve(
     id_eleve SERIAL,

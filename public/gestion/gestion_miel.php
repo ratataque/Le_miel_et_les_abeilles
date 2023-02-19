@@ -14,6 +14,9 @@ $sql = "table miel;";
 $table_miel = pg_fetch_all(pg_query($conn, $sql));
 
 if (isset($_POST["demande_supp"])) {
+   if (count($_POST) <= 1) {
+      ?><script> location.replace("/gestion/administration.php?content=gestion_miel"); </script><?php
+   }
    demande_validation_suppression($_POST, 'gestion_miel');
 } elseif (isset($_POST["validation"])) {
    if ($_POST["validation"]) {
