@@ -24,7 +24,7 @@ $sql .= "CREATE TABLE IF NOT EXISTS miel(
     prix_miel INT,
     id_apiculteur INT NOT NULL,
     PRIMARY KEY(id_miel),
-    FOREIGN KEY(id_apiculteur) REFERENCES Apiculteur(id_apiculteur) ON DELETE CASCADE
+    FOREIGN KEY(id_apiculteur) REFERENCES apiculteur(id_apiculteur) ON DELETE CASCADE
 );
 ";     
 
@@ -41,7 +41,7 @@ $sql .= "CREATE TABLE IF NOT EXISTS eleve(
     prenom_eleve VARCHAR(50),
     id_classe INT NOT NULL,
     PRIMARY KEY(id_eleve),
-    FOREIGN KEY(id_classe) REFERENCES Classe_eleve(id_classe) ON DELETE CASCADE
+    FOREIGN KEY(id_classe) REFERENCES classe_eleve(id_classe) ON DELETE CASCADE
 ); 
 ";     
 
@@ -71,8 +71,8 @@ $sql .= "CREATE TABLE IF NOT EXISTS commande(
     id_client INT NOT NULL,
     id_eleve INT NOT NULL,
     PRIMARY KEY(id_commande),
-    FOREIGN KEY(id_client) REFERENCES Client(id_client),
-    FOREIGN KEY(id_eleve) REFERENCES Eleve(id_eleve)
+    FOREIGN KEY(id_client) REFERENCES client(id_client),
+    FOREIGN KEY(id_eleve) REFERENCES eleve(id_eleve)
 );
 ";     
 
@@ -83,8 +83,8 @@ $sql .= "CREATE TABLE IF NOT EXISTS produit_commande(
     id_miel INT NOT NULL,
     id_commande INT NOT NULL,
     PRIMARY KEY(id_produit_commande),
-    FOREIGN KEY(id_miel) REFERENCES Miel(id_miel),
-    FOREIGN KEY(id_commande) REFERENCES Commande(id_commande)
+    FOREIGN KEY(id_miel) REFERENCES miel(id_miel),
+    FOREIGN KEY(id_commande) REFERENCES commande(id_commande)
 );
 ";     
 pg_query($conn, $sql);
