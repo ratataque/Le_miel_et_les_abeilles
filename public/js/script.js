@@ -18,7 +18,7 @@ function switch_img(next_div, prec_div) {
 }
 
 function init() {
-    console.log($(".menu").scrollTop());
+    // console.log($(".menu").scrollTop());
 
     $(".show").not($(".miel_slide")).removeClass("show");
 
@@ -130,7 +130,7 @@ function miel_click(element) {
     if (window.innerWidth < 800) {
 
         var x = $(element).parent().offset().left - window.innerWidth*0.02;
-        var y = $(element).parent().offset().top - window.innerHeight*0.05 + $(".menu").scrollTop();
+        var y = $(element).parent().offset().top - window.innerHeight*0.05;
     } else {
         var x = $(element).parent().offset().left - window.innerWidth*0.05;
         // var y = $(element).parent().offset().top - window.innerHeight*0.15 + $(".menu").scrollTop();
@@ -202,9 +202,9 @@ function miel_click(element) {
             // $(".menu").scrollTop(0);
             var ini_y = $(element).parent().offset().top;
 
-            $(element).children().children().css({"position": "fixed",
-                                                    "left": "unset",
-                                                    "top": ini_y});  
+            // $(element).children().children().css({"position": "fixed",
+            //                                         "left": "unset",
+            //                                         "top": ini_y});  
     
         }, 1100);
 
@@ -224,9 +224,9 @@ function miel_click(element) {
             $(element).children().children().addClass("show");
 
             setTimeout(() => {
-                $(element).children().children().css({"position": "fixed",
-                                                        "left": "unset",
-                                                        "bottom": $(".menu").scrollTop()});  
+                // $(element).children().children().css({"position": "fixed",
+                //                                         "left": "unset",
+                //                                         "bottom": $(".menu").scrollTop()});  
 
                 $(element).children().children().attr("style", "transform: translate(-" + x.toString() + "px, -" + y.toString() + "px) !important")
 
