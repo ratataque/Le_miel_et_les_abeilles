@@ -35,8 +35,13 @@ $sql .= "CREATE TABLE IF NOT EXISTS niveau(
 );
 ";   
 
-$sql .= "
-
+$sql .= "CREATE TABLE IF NOT EXISTS classe_eleve(
+    id_classe SERIAL,
+    nom_classe VARCHAR(50),
+    id_niveau INT NOT NULL,
+    PRIMARY KEY(id_classe),
+    FOREIGN KEY(id_niveau) REFERENCES niveau(id_niveau) ON DELETE CASCADE
+);
 ";
 
 $sql .= "CREATE TABLE IF NOT EXISTS eleve(
