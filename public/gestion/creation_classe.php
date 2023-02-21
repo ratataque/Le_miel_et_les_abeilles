@@ -1,4 +1,5 @@
 <?php
+include("fonction.php");
 echo ("<pre>");
 var_dump($_POST);
 echo ("</pre>");
@@ -144,7 +145,17 @@ if (isset($_POST["nom_niveau"])) {
         <br>
         <section>
             <h1>Gestion des différentes classes : </h1>
-            <h2>fdef</h2>
+            <?php
+                $conn = pg_connect("host=db dbname=miel user=miel password=miel");
+                $sql = ("table niveau;");
+                $liste_niveau = pg_fetch_all(pg_query($conn, $sql));
+
+                foreach ($liste_niveau as $ligne_niveau) {
+                    $sql = "select * from classe_eleve where id_niveau = ".$ligne_niveau['id_niveau'].";";
+                    $liste_classe = pg_fetch_all(pg_query($conn, $sql));
+                    affichTable($liste_classe, $ligne_niveau['nom_niveau']);
+                }
+            ?>
             <p>
 
             </p>
