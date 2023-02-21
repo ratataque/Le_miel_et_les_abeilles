@@ -3,6 +3,7 @@
         // echo "<pre>";
         // var_dump($miel[$i]);
         // echo "</pre>";
+        $font = 2.4 - (strlen($apiculteur[$i]["nom_societe"]) - 4) * 0.1;
 
         echo "
             <div class='apiculteur_".$apiculteur[$i]["id_apiculteur"]."'>
@@ -15,7 +16,7 @@
                 </div>
                 <div class='pancarte cacher_pancarte'>
                         <img src='./images/pancarte.png' alt=''>
-                        <div class='prix'>". $apiculteur[$i]["nom_societe"] ."</div>
+                        <div class='prix' style='font-size: ".$font."vw;'>". $apiculteur[$i]["nom_societe"] ."</div>
                 </div>
                 <div class='space_description'>
                     <div class='description cacher_bas'>

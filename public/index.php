@@ -121,11 +121,11 @@ $apiculteur = pg_fetch_all(pg_query($conn, $sql));
                     for ($i = 0; $i < count($apiculteur); $i++) {
                     
                         if ($i % 4 == 0 && $i != 0) {
-                            $decal = abs((int)($i / 4) - 1) * 30;
+                            $decal = abs((int)($i / 4)) * 295;
                             if ($is_mobil) {
                                 $decal *= 2;
                             }
-                            $images .= "<div class='images' style='position: absolute; transform: translateY($decal"."vh);'>";
+                            $images .= "<div class='images' style='position: absolute; top: $decal"."px;'>";
                         }
 
                         $images .= "
@@ -154,11 +154,11 @@ $apiculteur = pg_fetch_all(pg_query($conn, $sql));
                     for ($i = 0; $i < count($miel); $i++) {
                     
                         if ($i % 4 == 0 && $i != 0) {
-                            $decal = abs((int)($i / 4) - 1) * 30;
+                            $decal = abs((int)($i / 4)) * 295;
                             if ($is_mobil) {
                                 $decal *= 2;
                             }
-                            $images .= "<div class='images' style='position: absolute; transform: translateY($decal"."vh);'>";
+                            $images .= "<div class='images' style='position: absolute; top: $decal"."px;'>";
                         }
 
                         $images .= "
