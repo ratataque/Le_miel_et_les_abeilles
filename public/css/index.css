@@ -203,7 +203,7 @@ p {
     /* position: absolute; */
     transform: translateY(-90px);
     color: rgb(211, 162, 47);
-    /* font-size: 300%; */
+    font-size: 50px;
     font-family: flash;
     justify-content: center;
     display: flex;

@@ -3,7 +3,7 @@
         // echo "<pre>";
         // var_dump($miel[$i]);
         // echo "</pre>";
-        $font = 2.5 - (strlen($apiculteur[$i]["nom_societe"]) - 6) * 0.1;
+        $font = 2.4 - (strlen($apiculteur[$i]["nom_societe"]) - 4) * 0.1;
 
         echo "
             <div class='apiculteur_".$apiculteur[$i]["id_apiculteur"]."'>
