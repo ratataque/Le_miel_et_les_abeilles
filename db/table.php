@@ -48,6 +48,7 @@ $sql .= "CREATE TABLE IF NOT EXISTS eleve(
     id_eleve SERIAL,
     nom_eleve VARCHAR(50),
     prenom_eleve VARCHAR(50),
+    password_eleve VARCHAR(50),
     id_classe INT NOT NULL,
     PRIMARY KEY(id_eleve),
     FOREIGN KEY(id_classe) REFERENCES classe_eleve(id_classe) ON DELETE CASCADE
