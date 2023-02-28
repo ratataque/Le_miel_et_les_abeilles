@@ -50,6 +50,7 @@ function get_list_commande($id_eleve){
                                         "nom_client" => $commande['nom_client'],
                                         "prenom_client" => $commande['prenom_client'],
                                         "adresse_client" => $commande['adresse_client'],
+                                        "prix_total_commande" => $commande["prix_total_commande"],
                                         "liste_article" => []
                                     ));
             $last_command = $commande['id_commande'];
