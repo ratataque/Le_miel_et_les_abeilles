@@ -4,6 +4,8 @@
 function eleve_login($login, $mdp){
     global $conn;
     global $ID_ELEVE;
+    global $NOM_ELEVE;
+    global $PRENOM_ELEVE;
 
     $sql = "table eleve;"; 
     $table = pg_fetch_all(pg_query($conn, $sql));
@@ -14,6 +16,8 @@ function eleve_login($login, $mdp){
         if ($line["nom_eleve"] == $login and $line["password_eleve"] == $mdp){
             $login_valid = true;
             $ID_ELEVE = $line["id_eleve"];
+            $NOM_ELEVE = $line["nom_eleve"];
+            $PRENOM_ELEVE = $line["prenom_eleve"];
             break;
         }
     }
@@ -88,12 +92,14 @@ if (isset($_POST["login"]) and isset($_POST["password"])) {
     // echo "</pre>";
 
     global $ID_ELEVE;
+    global $NOM_ELEVE;
+    global $PRENOM_ELEVE;
 
     $connection_valide = eleve_login($_POST["login"], $_POST["password"]);
 
     if($connection_valide){
         $list_commandes = get_list_commande($ID_ELEVE);
-        echo(json_encode(array( "state" => $connection_valide, "Commandes" => array("liste_commandes" => $list_commandes, "id_eleve" => $ID_ELEVE), "miel" => array("liste_miel" => $list_miel))));
+        echo(json_encode(array( "state" => $connection_valide, "Commandes" => array("liste_commandes" => $list_commandes, "id_eleve" => $ID_ELEVE, "nom_eleve" => $NOM_ELEVE, "prenom_eleve" => $PRENOM_ELEVE), "miel" => array("liste_miel" => $list_miel))));
     } else {
         echo(json_encode(array( "state" => $connection_valide)));
     }
