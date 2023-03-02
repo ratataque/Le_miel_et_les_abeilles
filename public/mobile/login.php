@@ -103,5 +103,9 @@ if (isset($_POST["login"]) and isset($_POST["password"])) {
     } else {
         echo(json_encode(array( "state" => $connection_valide)));
     }
+} else {
+    http_response_code(401);
+    exit();
 }
+
 
