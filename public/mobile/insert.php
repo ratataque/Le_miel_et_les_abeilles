@@ -43,7 +43,7 @@ if (isset($_POST["commande"]) and isset($_POST["id_eleve"])) {
         echo(json_encode(array( "state" => "false")));
     }
 } else {
-    header("HTTP/1.0 401 Unauthorized"); 
+    http_response_code(401);
     exit();
 }
 
