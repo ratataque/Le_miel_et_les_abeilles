@@ -48,7 +48,7 @@ function get_list_commande($id_eleve){
     $i = -1;
     foreach ($list_commandes as $commande) {
         if ($commande['id_commande'] !== $last_command) {
-            array_push($payload, array(
+            $payload[$commande['id_client']] = array(
                                         "id_commande" => $commande['id_commande'],
                                         "id_client" => $commande['id_client'],
                                         "nom_client" => $commande['nom_client'],
@@ -56,13 +56,13 @@ function get_list_commande($id_eleve){
                                         "adresse_client" => $commande['adresse_client'],
                                         "prix_total_commande" => $commande["prix_total_commande"],
                                         "liste_article" => []
-                                    ));
+                                    );
             $last_command = $commande['id_commande'];
             $i++;
         }
-        // var_dump($payload[$i]["liste_article"]);
+        // print_r($payload);
 
-        array_push($payload[$i]["liste_article"], array(
+        array_push($payload[$commande['id_client']]["liste_article"], array(
                                                         "id_miel" => $commande['id_miel'],
                                                         "nom_miel" => $commande['nom_miel'],
                                                         "prix_miel" => $commande['prix_miel'],
