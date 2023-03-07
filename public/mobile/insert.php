@@ -34,7 +34,7 @@ if (isset($_POST["commande"]) and isset($_POST["id_eleve"])) {
                 $state = (!$test) ? false : $state;
             }
             
-            echo(json_encode(array( "state" => $state)));
+            echo(json_encode(array( "state" => $state, "id_commande" => $id_commande, "id_client" => $id_client)));
 
         } else {
             echo(json_encode(array( "state" => "false")));
@@ -47,3 +47,4 @@ if (isset($_POST["commande"]) and isset($_POST["id_eleve"])) {
     exit();
 }
 
+?>
