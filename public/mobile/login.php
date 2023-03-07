@@ -99,7 +99,7 @@ if (isset($_POST["login"]) and isset($_POST["password"])) {
 
     if($connection_valide){
         $list_commandes = get_list_commande($ID_ELEVE);
-        echo(json_encode(array( "state" => $connection_valide, "Commandes" => array("liste_commandes" => $list_commandes, "id_eleve" => $ID_ELEVE, "nom_eleve" => $NOM_ELEVE, "prenom_eleve" => $PRENOM_ELEVE), "miel" => array("liste_miel" => $list_miel))));
+        echo(json_encode(array( "state" => $connection_valide, "Commandes" => array("liste_commandes" => $list_commandes, "id_eleve" => $ID_ELEVE, "nom_eleve" => $NOM_ELEVE, "prenom_eleve" => $PRENOM_ELEVE), "Miel" => array("liste_miel" => $list_miel))));
     } else {
         echo(json_encode(array( "state" => $connection_valide)));
     }
