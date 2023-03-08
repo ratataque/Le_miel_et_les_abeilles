@@ -37,9 +37,9 @@ if (isset($_POST["payload"]) and isset($_POST["id_eleve"])) {
                                                                     ".$article["total_produit_commande"].", 
                                                                     ".$article["id_miel"].", 
                                                                     ".$id_commande.");"; 
-                $test = pg_fetch_all(pg_query($conn, $sql));
+                $test = pg_query($conn, $sql);
 
-                $state = (!$test) ? false : $state;
+                $state = ($test) ? $state : false;
             }
             
             echo(json_encode(array( "state" => $state, "id_commande" => $id_commande, "id_client" => $id_client)));
