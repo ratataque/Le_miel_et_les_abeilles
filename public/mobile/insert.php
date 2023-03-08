@@ -1,8 +1,9 @@
 <?php
 global $ID_ELEVE;
 
-if (isset($_POST["commande"]) and isset($_POST["id_eleve"])) {
+if (isset($_POST["payload"]) and isset($_POST["id_eleve"])) {
     global $ID_ELEVE;
+    $commande = $_POST["payload"]["Data_commande"];
 
     $ID_ELEVE = $_POST["id_eleve"];
 
