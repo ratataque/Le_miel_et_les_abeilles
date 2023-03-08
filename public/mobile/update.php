@@ -14,14 +14,15 @@ if (isset($_POST["payload"]) and isset($_POST["id_eleve"])) {
     $conn = connection_sql();
 
     $sql = "UPDATE client SET nom_client = '".$commande['nom_client']."', 
-                                    prenom_client = '".$commande['prenom_client']."', 
-                                    adresse_client = '".$commande['adresse_client']."'
-                                    WHERE id_client = $id_client;"; 
+                                prenom_client = '".$commande['prenom_client']."', 
+                                adresse_client = '".$commande['adresse_client']."'
+                                WHERE id_client = $id_client;"; 
 
     $test = pg_query($conn, $sql);
 
     if($test !== false){
-        $sql = "UPDATE commande SET prix_total_commande = ".$commande['prix_total_commande'].";"; 
+        $sql = "UPDATE commande SET prix_total_commande = ".$commande['prix_total_commande']."
+                                WHERE id_commande = $id_commande;"; 
 
         $test = pg_query($conn, $sql);
 
