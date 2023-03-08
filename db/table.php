@@ -81,8 +81,8 @@ $sql .= "CREATE TABLE IF NOT EXISTS commande(
     id_client INT NOT NULL,
     id_eleve INT NOT NULL,
     PRIMARY KEY(id_commande),
-    FOREIGN KEY(id_client) REFERENCES client(id_client),
-    FOREIGN KEY(id_eleve) REFERENCES eleve(id_eleve)
+    FOREIGN KEY(id_client) REFERENCES client(id_client) ON DELETE CASCADE,
+    FOREIGN KEY(id_eleve) REFERENCES eleve(id_eleve) ON DELETE CASCADE
 );
 ";     
 
@@ -94,7 +94,7 @@ $sql .= "CREATE TABLE IF NOT EXISTS produit_commande(
     id_commande INT NOT NULL,
     PRIMARY KEY(id_produit_commande),
     FOREIGN KEY(id_miel) REFERENCES miel(id_miel),
-    FOREIGN KEY(id_commande) REFERENCES commande(id_commande)
+    FOREIGN KEY(id_commande) REFERENCES commande(id_commande) ON DELETE CASCADE
 );
 ";     
 pg_query($conn, $sql);
