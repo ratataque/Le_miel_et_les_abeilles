@@ -21,3 +21,20 @@ site de vente de miel vitrine qui vas de paire avec <a href="https://github.com/
 ![alt text](https://github.com/ratataque/Le_miel_et_les_abeilles/blob/main/images_git/miel.gif?raw=true)
 ![alt text](https://github.com/ratataque/Le_miel_et_les_abeilles/blob/main/images_git/miel.png?raw=true)
 ![alt text](https://github.com/ratataque/Le_miel_et_les_abeilles/blob/main/images_git/liste_miel.png?raw=true)
+![alt text](https://github.com/ratataque/Le_miel_et_les_abeilles/blob/main/images_git/miel_mobil.gif?raw=true)
+
+***
+
+## Comment lancer le projet <a id="install"></a>
+
+### Prerequis
+- git
+- docker
+
+***
+
+cloner le repo
+<pre>
+    <code>git clone https://github.com/ratataque/Le_miel_et_les_abeilles.git</code>
+</pre>
+puis lancer fullLaunch.bat dans qui present sous **\Le_miel_et_les_abeilles\launch**
