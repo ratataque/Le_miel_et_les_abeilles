@@ -83,7 +83,7 @@ function affich_Table_apiculteur($tableData)
                                         case "lien_photo_apiculteur":
                                             echo ("<td>");
                                             // affichage de l'image
-                                            echo ("<img class='show' src='data:image/png;base64, " . $value . "'>");
+                                            echo ("<img class='karl_troue_du_cul' src='data:image/png;base64, " . $value . "'>");
                                             echo ("</td>");
                                             break;
                                         case "nom_societe":
@@ -193,7 +193,7 @@ function affich_Table_miel($tableData, $id)
                                         case "lien_photo_miel":
                                             echo ("<td>");
                                             // affichage de l'image
-                                            echo ("<img class='show' src='data:image/png;base64, " . $value . "'>");
+                                            echo ("<img class='karl_troue_du_cul' src='data:image/png;base64, " . $value . "'>");
                                             echo ("</td>");
                                             break;
                                         case "nom_miel":
