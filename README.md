@@ -19,7 +19,7 @@ site de vente de miel vitrine qui vas de paire avec <a href="https://github.com/
 
 
 ![alt text](https://github.com/ratataque/Le_miel_et_les_abeilles/blob/main/images_git/miel.gif?raw=true)
-![alt text](https://github.com/ratataque/Le_miel_et_les_abeilles/blob/main/images_git/mcd.gif?raw=true)
+![alt text](https://github.com/ratataque/Le_miel_et_les_abeilles/blob/main/images_git/mcd.png?raw=true)
 ![alt text](https://github.com/ratataque/Le_miel_et_les_abeilles/blob/main/images_git/miel.png?raw=true)
 ![alt text](https://github.com/ratataque/Le_miel_et_les_abeilles/blob/main/images_git/liste_miel.png?raw=true)
 ![alt text](https://github.com/ratataque/Le_miel_et_les_abeilles/blob/main/images_git/miel_mobile.gif?raw=true)
